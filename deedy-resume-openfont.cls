@@ -33,7 +33,7 @@
 \setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
 
 % Name command
-\newcommand{\namesection}[3]{
+\newcommand{\namesection}[3]{{\begin{minipage}{\textwidth}
 \centering{
 \fontsize{40pt}{60pt}
 \fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 
@@ -43,16 +43,16 @@
 \color{headings}
 \fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{12pt}{12pt}\selectfont #3}
 \noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
-}
+\end{minipage}}}
 
 \newcommand{\sectionsep}{\vspace{8pt}}
 
 % Headings command
 \newcommand{\runsection}[1]{%
 \vspace*{8pt}
-\begin{minipage}{\textwidth}\hspace*{-0.5cm}\color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont\uppercase{#1}\end{minipage}
+\begin{minipage}{\textwidth}\hspace*{-0.5cm}\color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont\uppercase{#1}
+\hspace*{0.5cm}\end{minipage}
 \normalfont
-\hspace*{0.5cm}
 }
 
 % Subeadings command
@@ -192,7 +192,7 @@
 % publications
 \newcommand{\publication}[2]{%
 \runsection{#1}
-\mycite{#2}
+\hspace*{0.65cm}\mycite{#2}
 
 \sectionsep
 
