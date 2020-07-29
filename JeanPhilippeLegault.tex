@@ -1,0 +1,407 @@
+
+\documentclass[]{deedy-resume-openfont}
+
+% \titleformat{\section}[runin]{}{}{}{}[]
+% \titleformat{\subsection}[runin]{}{}{}{}[]
+
+\usepackage{fontspec}
+\usepackage{fancyhdr}
+\usepackage{babel,csquotes,xpatch}% recommended
+\usepackage[backend=biber]{biblatex}
+\addbibresource{publications.bib}
+
+% Custom cite command with a newline for authors and journal
+\DeclareCiteCommand{\mycite}
+    {%
+    {\bf\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\usebibmacro{maintitle+title}}
+    \newline\nopunct\newblock
+    {\bf\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont\usebibmacro{author}}
+    \newline\nopunct\newblock
+    {\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont\usebibmacro{date}~|~\printlist{organization}~|~\printlist{location}}
+    \newline\nopunct\newblock
+    \printfield{eventtitle}
+    }
+    {\multicitedelim}
+    {\usebibmacro{postnote}}
+
+% Make the titles in upper case
+\DeclareFieldFormat
+    [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
+    {titlecase}{\MakeUppercase{#1}}
+
+% % Used in some citations
+% \DeclareNameFormat
+% [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
+% {author}{%
+%     \ifnumequal{\value{listcount}}{1}
+%     {\ifgiveninits
+%         {\usebibmacro{name:family-given}
+%             {\namepartfamily}
+%             {\namepartgiveni}
+%             {\namepartprefix}
+%             {\namepartsuffix}}
+%         {\usebibmacro{name:family-given}
+%             {\namepartfamily}
+%             {\namepartgiven}
+%             {\namepartprefix}
+%             {\namepartsuffix}}%
+%         \ifboolexpe{%
+%         test {\ifdefvoid\namepartgiven}
+%         and
+%         test {\ifdefvoid\namepartprefix}}
+%         {}
+%         {\usebibmacro{name:revsdelim}}}
+%     {\ifgiveninits
+%         {\usebibmacro{name:given-family}
+%             {\namepartfamily}
+%             {\namepartgiveni}
+%             {\namepartprefix}
+%             {\namepartsuffix}}
+%         {\usebibmacro{name:given-family}
+%             {\namepartfamily}
+%             {\namepartgiven}
+%             {\namepartprefix}
+%             {\namepartsuffix}}}%
+%     \usebibmacro{name:andothers}}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\begin{document}
+
+\namesection
+{Jean-Philippe}
+{Legault}
+{ \href{mailto:jeanphilippe.legault@unb.ca}{jeanphilippe.legault@unb.ca}\\
++1 (514)-603-8357\
+}
+
+\begin{flushleft}
+\begin{samepage}
+    \section{Languages}
+    Francais, English
+\end{samepage}
+
+\begin{samepage}
+    \section{Links} 
+    Github://\href{https://github.com/jeanlego}{\descript{jeanlego}}
+    LinkedIn://\href{https://www.linkedin.com/in/jean-philippe-legault-1489ab173}{\descript{jean-philippe-legault-1489ab173}}
+    \sectionsep
+\end{samepage}
+
+\begin{samepage}
+    \section{Education} 
+
+    \subsection{Ecole Nationale D'Aerotechnique}
+    \vspace{0.1cm}
+    FA.2012 - WI.2014\\
+    \descript{Completed 56 credit towards a College degree as a Technician in Aerospace Manufacturing}
+    \sectionsep
+
+    \subsection{University of New Brunswick}
+    
+    \vspace{0.1cm}
+    FA.2015 - FA.2017\\
+    \descript{Bachelor's in Computer Science with Honours}
+    
+    \vspace{0.1cm}
+    WI.2018 - Present\\
+    \descript{Masters in Computer Science}
+    \sectionsep
+
+\end{samepage}
+
+\begin{samepage}
+\section{Skills}
+
+\descript{Programming Languages | }
+C \textbullet{} 
+C++ \textbullet{}
+Java \textbullet{}
+Verilog \textbullet{}
+VHDL \textbullet{}
+Blif \textbullet{}
+LaTex \textbullet{}
+XML \textbullet{}
+OpenMP \textbullet{}
+CUDA \textbullet{}
+Python \textbullet{}
+Perl \textbullet{}
+ArmV8 Assembly
+\sectionsep 
+
+\descript{Tools | }
+Make \textbullet{}
+CMake \textbullet{}
+Bison \textbullet{}
+Flex \textbullet{}
+Bash \textbullet{}
+Git \textbullet{}
+Jenkins \textbullet{}
+Docker \textbullet{}
+KVM \textbullet{}
+Cross-Compilers \textbullet{}
+Quartus \textbullet{}
+Verilog-To-Routing \textbullet{}
+GDB \textbullet{}
+Valgrind \textbullet{}
+AutoCAD \textbullet{}
+FreeCAD \textbullet{}
+Office Suite \textbullet{}
+CatiaV5
+\sectionsep
+
+\descript{Operating Systems | }
+Linux \textbullet{}
+BSD \textbullet{}
+OSx \textbullet{}
+Windows
+\sectionsep
+
+\descript{Other Knowledge | }
+Vlans \textbullet{}
+Linux Development \textbullet{}
+Drafting \textbullet{}
+Sheet Metal Work \textbullet{}
+Welding \textbullet{}
+Electronic \textbullet{}
+Embedded System Development \textbullet{}
+CAD Drawing
+\sectionsep
+
+\descript{Interest | }
+Electronics \textbullet{}
+Networking \textbullet{} 
+Programming \textbullet{} 
+Fabrication \textbullet{} 
+Machining \textbullet{} 
+Wood Working \textbullet{} 
+Automation \textbullet{} 
+Backcountry Camping \textbullet{} 
+Hiking \textbullet{} 
+\sectionsep
+\end{samepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{samepage}
+\section{Working Experiences}
+
+\runsubsection{Teaching Assistant}
+\descript{| University of New Brunswick}
+\location{Federicton, NB}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item WI-2018 Computability and Formal Languages
+\item SM-2018 Professional Practices
+\item FA-2018 Professional Practices
+\end{tightemize}
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\runsubsection{Tutor}
+\descript{| Self-Employed}
+\location{Federicton, NB}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item FA-2018 Operating Systems I (CS3413) Rachelle Potter
+\item FA-2017 Data Structures and Algorithm for Engineers (CS1023) Julie brown
+\end{tightemize}
+\sectionsep
+\end{samepage}
+
+\clearpage
+
+
+\begin{samepage}
+\runsubsection{Electronic and Software Technician}
+\descript{| Canada Electronic Parts Online Inc.}
+\location{April 2015 – April 2018 | Fredericton, NB}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Played a major role in increasing sales and revenue by increasing outreach.
+\item Broadened the company expertise in electronic repairs and introduced tooling and techniques to repair devices composed of surface mount components.
+\item Improved repairs success rate and revenue.
+\item Introduced software based repairs and debugging ( I.E. reflashing lost IMEI or CMOS chip )
+\item Introduced corrupted or defective hard drive data recovery.
+\end{tightemize}
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\runsubsection{Teaching Aid for a student with learning disabilities}
+\descript{| Self-Employed}
+\location{ January 2014 – July 2014 | Longueuil, Qc}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Helped a student get her pre-calculus mathematics at an Adult Learning School.
+\item She succeeded in acquiring her pre-requisite to attend Continuing Study School.
+\item The Task was to assist in her learning and succeed Mathematics level 426 using pre-built section based standard booklets and tests.
+\end{tightemize}
+\sectionsep
+\end{samepage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     PROJECTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{samepage}
+\section{Project Contributions}
+
+\runsubsection{Odin II}
+\descript{ | \textbf{C based Verilog to Blif Compiler}}
+\href{https://github.com/verilog-to-routing/vtr-verilog-to-routing/graphs/contributors}{\descript{github://verilog-to-routing}}
+\location{ January 2018 - Present }
+Maintain the Front-End Synthesis tool of the Verilog to Routing Project.
+Responsible for:
+\begin{tightemize}
+\item Managing other developer and review their merge requests.
+\item Fix Bugs and broken features.
+\item Build new features and improve the tool usability and documentation for both developers and users.
+\end{tightemize}
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\runsubsection{Eclipse OMR}
+\descript{ | \textbf{C style C++ based Cross-platform components for building reliable, high performance language runtimes}}
+\href{https://github.com/eclipse/omr}{\descript{github://eclipse/omr}}
+\location{ January 2018 - Present }
+Started the work on basic implementation of an ARM64V8 specific OMR. This involved making the full suite of hardware operation in the ARM64V8 documentation (or AArch64) available to the JIT compiler. Weekly meetings were held on infrastructure design and implementation. The project was lead by the IBM Runtimes Team in Ottawa and work was done conjointly with members of the IBM Japan team.
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\section{Awards}
+
+\runsubsection{Dean's List}
+\descript{ | \textbf{University of New Brunswick}}
+\location{ 2015 - 2016  | Fredericton, NB}
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\section{Scholarships}
+
+\runsubsection{Sir George E. Foster}
+\descript{ | \textbf{University of New Brunswick}}
+\location{FA 2016 - WI 2017  | Fredericton, NB}
+Men and women who show scholastic promise and who need financial assistance to attend university. Open to students from all parts of Canada.
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\runsubsection{Centre for Advance Studies Research}
+\descript{ | \textbf{University of New Brunswick}}
+\location{WI 2018 - WI 2020   | Fredericton, NB}
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\section{Published Papers}
+
+\runsubsection{Towards Trainable Synthesis for Optimized Circuit Deployment on FPGA}\\
+\descript{ \textbf{J.-P. Legault, P.Patros, K.B. Kent}}
+\location{ October, 2018 | Torino, Italy } 
+Proceeding of the 29th international Symposium on Rapid System Prototyping\\
+P:90-96\\
+IEEE Xplore, \href{https://doi.org/10.1109/RSP.2018.8631999}{DOI: 10.1109/RSP.2018.8631999}
+\sectionsep
+\end{samepage}
+
+\clearpage
+
+\begin{samepage}
+\section{Papers In Progress}
+
+\runsubsection{VTR 8.0: An Enhanced Complete CAD Flow for FPGAs}\\
+\descript{ \textbf{K. Murray, J.-P. Legault, A. Graham, P. Patros, K. B. Kent and V. Betz}}
+\location{ TBA | ACM Transactions on Reconfigurable Technology and Systems}
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\section{Dissertations}
+
+\runsubsection{Experimental verilog synthesis features for odin II \& alternative multiplier hard-block for fpga}\\
+\descript{ \textbf{J.-P. Legault}}
+\location{ September, 2017 | Defended at University of New Brunswick | Fredericton, New Brunwick, Canada }
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\section{Invited Talks}
+
+\runsubsection{Experimental verilog synthesis features for odinII \& alternative multiplier hard-block for fpga}\\
+\descript{ \textbf{J.-P. Legault}}
+\location{ October 13-14, 2017 | University of New Brunswick | Fredericton, New Brunwick, Canada }
+12th Annual Conference for Science Atlantic Mathematics, Statistics and Computer Science by the Atlantic Association for Research in the Mathematical Sciences (AARMS)
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\section{Workshop Talks}
+
+\runsubsection{AArch64 Support for the OMR Language Runtime Toolkit}\\
+\descript{ \textbf{\underline{J.-P. Legault}, \underline{A. Graham}, Dr.
+K.B. Kent, D. Maier, K. Konno}}
+\location{ October 29-31, 2018 | Markham, Ontario, Canada }
+2nd Annual Workshop on Advances in Open Runtime Technology for Cloud Environments, CASCON 2018
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\runsubsection{AArch64 Support for the OMR Language Runtime Toolkit}\\
+\descript{ \textbf{\underline{J.-P. Legault}, A. Graham, Dr.
+K.B. Kent, D. Maier, K. Konno}}
+\location{ November 4-9 , 2018 | Boston, United States}
+TURBO’18 Building Language Runtimes with Eclipse OMR Workshop, SPLASH 2018
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\section{Conference Posters}
+
+\runsubsection{AArch64 Support for the OMR Language Runtime Toolkit}\\
+\descript{ \textbf{\underline{J.-P. Legault}, \underline{A. Graham}, Dr.
+K.B. Kent, D. Maier, K. Konno}}
+\location{ October 29-31, 2018 | Markham, Ontario, Canada }
+2nd Annual Workshop on Advances in Open Runtime Technology for Cloud Environments, CASCON 2018
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\runsubsection{Towards Trainable Synthesis for Optimized Circuit Deployment on FPGA}\\
+\descript{ \textbf{\underline{J.-P. Legault}, P. Patros, Dr.
+K.B. Kent}}
+\location{ October 23-24, 2018 | Toronto, Ontario, Canada }
+Innovation 360, Texpo 2018
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\runsubsection{Language Runtimes on Embedded Architectures}\\
+\descript{ \textbf{\underline{J.-P. Legault}, \underline{A. Graham}, Dr.
+K.B. Kent, D. Maier, J. Kingdon}}
+\location{ May 8-9, 2018 | IBM Canada Lab | Markham, Ontario, Canada }
+CASTLE 2018
+\sectionsep
+\end{samepage}
+
+\begin{samepage}
+\runsubsection{Language Runtimes on Embedded Architectures}\\
+\descript{ \textbf{\underline{J.-P. Legault}, \underline{A. Graham}, Dr.
+K.B. Kent, D. Maier, J. Kingdon}}
+\location{ April 11, 2018 | University of New Brunswick | Fredericton, NB}
+15th Annual Research Exposition of the UNB Faculty of Computer Science
+\sectionsep
+\end{samepage}
+
+\mycite{linguistics}
+
+\end{flushleft}
+
+\end{document}  \documentclass[]{article}
