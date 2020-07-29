@@ -1,6 +1,4 @@
-% !TEX options = -xelatex -synctex=1 -interaction=nonstopmode -file-line-error "%DOC%"
-
-\documentclass[english]{deedy-resume-openfont}
+\documentclass[english,letterpaper]{deedy-resume-openfont}
 
 \addbibresource{publications.bib}
 
@@ -13,9 +11,7 @@
 +1 (514)-603-8357\
 }
 
-% justify without the indent at first
-\justify
-\setlength{\parindent}{0pt}
+\begin{flushleft}
 
 \begin{samepage}
 \section{Languages}
@@ -120,6 +116,14 @@
 \section{Working Experiences}
 
     \employement%
+        {Instructor (CS2263 - Systems Software Development)}{University of New Brunswick}
+        {May 2019 - July 2019 | Fredericton, New Brunswick, Canada}{%
+        Procedural program development and supporting tools, using the C language. 
+        Topics include: implementation of data structures and algorithms, memory management, and performance techniques. 
+        Includes software tools for program development such as compilation/linking, building, debugging, and version control.
+        }
+
+    \employement%
         {Teaching Assistant}{University of New Brunswick}
         {Federicton, New Brunswick, Canada}{%
         \begin{tightemize}
@@ -140,12 +144,12 @@
 
     \employement%
         {Electronic and Software Technician}{Canada Electronic Parts Online Inc.}
-        {April 2015-April 2018 | Fredericton, NB}{%
+        {April 2015-April 2018 | Fredericton, New Brunswick, Canada}{%
         \begin{tightemize}
         \item Played a major role in increasing sales and revenue by increasing outreach.
         \item Broadened the company expertise in electronic repairs and introduced tooling and techniques to repair devices composed of surface mount components.
         \item Improved repairs success rate and revenue.
-        \item Introduced software based repairs and debugging (i.e. reflashing lost IMEI or CMOS chip)
+        \item Introduced software-based repairs and debugging (i.e. reflashing lost IMEI or CMOS chip)
         \item Introduced corrupted or defective hard drive data recovery.
         \end{tightemize}
         }
@@ -156,7 +160,7 @@
         \begin{tightemize}
         \item Helped a student get her pre-calculus mathematics at an Adult Learning School.
         \item She succeeded in acquiring her pre-requisite to attend Continuing Study School.
-        \item The Task was to assist in her learning and succeed Mathematics level 426 using pre-built section based standard booklets and tests.
+        \item The Task was to assist in her learning and succeed in Mathematics level 426 using pre-built section based standard booklets and tests.
         \end{tightemize}
         }
 
@@ -168,45 +172,47 @@
         {January 2018 - Present | \href{https://github.com/verilog-to-routing/vtr-verilog-to-routing/graphs/contributors}{github://verilog-to-routing}}{%
         Maintain the Front-End Synthesis tool of the Verilog to Routing Project.
         \begin{tightemize}
-        \item Managing other developer and review their merge requests.
+        \item Managing other developers and review their merge requests.
         \item Fix Bugs and broken features.
         \item Build new features and improve the tool usability and documentation for both developers and users.
         \end{tightemize}
         }
 
     \employement%
-        {Eclipse OMR}{C style C++ based Cross-platform components for building reliable, high performance language runtimes}
+        {Eclipse OMR}{C style C++ based Cross-platform components for building reliable, high-performance language runtimes}
         {January 2018 - Present | \href{https://github.com/eclipse/omr}{github://eclipse/omr}}{%
-        Started the work on basic implementation of an ARM64V8 specific OMR. 
+        Began work on the basic implementation of an ARM64V8 specific OMR. 
         This involved making the full suite of hardware operation in the ARM64V8 documentation (or AArch64) available to the JIT compiler. 
         Weekly meetings were held on infrastructure design and implementation. 
-        The project was lead by the IBM Runtimes Team in Ottawa and work was done conjointly with members of the IBM Japan team.
+        The project was lead by the IBM Runtimes Team in Ottawa, and work was done conjointly with members of the IBM Japan team.
         }
 
 \section{Awards}
 
     \employement%
         {Dean's List}{University of New Brunswick}
-        {2015 - 2016 | Fredericton, NB}{%
-        Awarded to student who maintained a GPA above 3.7 throughout the academic year.
+        {2015 - 2016 | Fredericton, New Brunswick, Canada}{%
+        Awarded to students who maintained a GPA above 3.7 throughout the academic year.
         }
 
 \section{Scholarships}
 
     \employement%
         {Sir George E. Foster}{University of New Brunswick}
-        {FA 2016 - WI 2017  | Fredericton, NB}{%
+        {FA 2016 - WI 2017  | Fredericton, New Brunswick, Canada}{%
         Awarded to men and women who show scholastic promise and who need financial assistance to attend university. 
         Open to students from all parts of Canada.
         }
 
     \employement%
         {Centre for Advance Studies Research}{University of New Brunswick}
-        {WI 2018 - WI 2020   | Fredericton, NB}{%
+        {WI 2018 - WI 2020   | Fredericton, New Brunswick, Canada}{%
         Research Funding towards a Masters in Computer Science.
         }
 
 %\section{Papers In Progress}
+
+\blfootnote{Presentors are \underline{underlined}}
 
 \publication{Published Papers}{%
     trainable,
@@ -237,5 +243,69 @@
     odin11beyond,
     castle20
     }
+
+\end{flushleft}
+
+\clearpage
+
+\newgeometry{top=0.75cm, bottom=0.75cm, right=2.25cm, left=2.25cm}
+{\justifying
+\doublespacing
+\color{black}
+\fontspec[Path = fonts/raleway/]{Raleway-Regular}
+\fontsize{12pt}{12pt}
+\selectfont
+
+\vspace*{60pt}
+
+\section{statement of purpose}
+
+\vspace{12pt}
+
+I wish to apply to do my Doctoral degree because I believe we can both benefit from this.
+Looking at my last two and a half years, you should quickly realize they were reasonably prolific.
+I wish to continue doing research on different subjects and help doing so wherever possible.
+I am an avid learner and I believe that I would gain a lot but moving to a new environment.
+
+While doing my undergraduate degree at the university of New Brunswick, I met an instructor that sparked my desire to do research and teach---Dr. Patros.
+Dr. Patros taught the introductory course to Java that i attended in 2015.
+He kindly informed us of all the research possiblity at the faculty towards the end of the term.
+As soon as I learn about possible Field Programmable Gate Array (FPGA) research available at the Centre for Advance Studies--Atlantic, I had set out a roadmap for myself.
+I took electrical engineering courses to gain more knowledge on the hardware side and learn to program with HDL languages.
+I took programming language oriented courses to learn how compilers work.
+After working for 2 years on my undergraduate degree and gaining all the knowledge needed to work on the project, I applied to do an honours thesis under Dr. Kent.
+The thesis proposed to redesign the hard logic multipliers available on the FPGA to improve its flexibility and overall circuit performance.
+The project used the Odin II synthesis tool developped by Dr. Kent at the University of New Brunswick.
+Dr. Kent agreed and at the end of the summer, I defended my honours successfully.
+Dr. Kent offered me a position as a researcher for the group and I immediately started working on the Eclipse OMR and Eclipse OpenJ9 project.
+Alongside my main research topic, being the only developer in the group with knowledge of the Odin II project, I was tasked to maintain the code base and improve its usability.
+Throughout my Masters, I became the maintainer of the Odin II project and co-authored 5 papers on the subject.
+I became responsible to train summer, honours, masters, and Ph.D students on the project.
+My main research topic, OMR, also got me to help newcommers on the project and prepare a significant amount of workshop talks and posters.
+All the training i had to give only grew my desire to teach and, during the summer of 2019, finally got to try; It was exilarating.
+
+\newpage 
+\vspace*{20pt}
+
+I know I have found my vocation, while my writing skill still need polishing, I believe that my teaching skill have tremendously improved since my journey started.
+I have interest in a vast area of topics, from machining, to CAD design, to electronic, to software developement.
+My vast interest allow me to have an open mind about different topic and use parralel knowledge to solve complex problems.
+I believe that my wide interest also make me a more relatable person and down to earth; I have failed so many times at so many thing; It is humbling.
+I love to rapidly prototype ideas to verify their validity before investing more time into architecting a solution.
+This pratice was thaught to me during my studies in Aerospace Engineering amongst other valuable engineering pratices faced during development and manufacturing.
+
+I believe that I have grown significantly as a student, researcher, teacher and human at the Centre for Advance Studies--Atlantic, but I have started to stagnate and I want the possiblity to learn more.
+I am looking for a mentor to help guide my research and have more breadth of knowledge.
+I have worked on a commercial JIT compiler, and an open-source HDL synthesis tool; I can work on commercial and open-source project easily.
+In applying to do my Ph.D under you, I whish to learn more and get more opportunity to teach.
+
+I am gratefull that you took the time to read this and I hope to hear from you.
+
+\vspace*{20pt}
+\RaggedRight
+
+Yours sincerely,
+ Jean-Philippe Legault
+}
 
 \end{document}

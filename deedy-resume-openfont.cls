@@ -8,21 +8,23 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
+\usepackage[document]{ragged2e}
 % Package Imports
-\usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
+\usepackage[top=0.75cm, right=1.25cm, left=1.25cm, bottom=0.75cm]{geometry}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{xstring}
-\usepackage[document]{ragged2e}
+
+        \usepackage{setspace}
 
 \pagestyle{fancy}
 \fancyhf{}
 \usepackage[utf8]{inputenc}
 \usepackage{babel,csquotes,xpatch}% recommended
-\usepackage[backend=biber,maxcitenames=10000]{biblatex}
+\usepackage[backend=biber,maxcitenames=10]{biblatex}
 
 % Publications
-\renewcommand\refname{\vskip -1.5cm}
+%\renewcommand\refname{\vskip -1.5cm}
 
 % Color definitions
 \usepackage[usenames,dvipsnames]{xcolor} 
@@ -89,7 +91,7 @@ Last Updated on \today
 
 \usepackage{contour}
 \contourlength{0.8pt}
-\renewcommand{\underline}[1]{%
+\newcommand{\uline}[1]{%
   \underline{\smash{#1}\vphantom{T}}\vphantom{#1}%
   \llap{\contour{white}{#1}}%
 }
@@ -177,17 +179,18 @@ Last Updated on \today
 \begin{minipage}{\textwidth}
 \descript{#1 |}~\StrSubstitute{#2}{,}{\textbullet{}}
 \end{minipage}
-\sectionsep 
+\sectionsep
 }
 
 \newcommand{\employement}[5]{
 \begin{minipage}{\textwidth}
 \runsubsection{#1~|}\descript{ #2}
 \location{#3}
-#4
+#4 
 \end{minipage}
- % blank line here is necessary
+
 \sectionsep
+
 }
 
 \newcommand{\publication}[2]{%
@@ -195,3 +198,7 @@ Last Updated on \today
 \mycite{#2}
 }
 
+% footnote without marker
+\makeatletter
+\def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+\makeatother
