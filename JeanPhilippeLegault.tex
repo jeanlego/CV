@@ -1,51 +1,51 @@
-\documentclass[english,letterpaper]{deedy-resume-openfont}
+\documentclass[english,letterpaper,12pt]{deedy-resume-openfont}
 
 \addbibresource{publications.bib}
 
 \begin{document}
+\justify
 
 \namesection
 {Jean-Philippe}
 {Legault}
-{ \href{mailto:jeanphilippe.legault@unb.ca}{jeanphilippe.legault@unb.ca}\\
-+1 (514)-603-8357\
+{%
+    Phone: +1 (514)-603-8357\\
+    Mail to: \href{mailto:jeanphilippe.legault@unb.ca}{jeanphilippe.legault@unb.ca}\\
+    Github://\href{https://github.com/jeanlego}{\descript{jeanlego}}\\
+    LinkedIn://\href{https://www.linkedin.com/in/jean-philippe-legault-1489ab173}{\descript{jean-philippe-legault-1489ab173}}\\
 }
 
-\begin{flushleft}
+%
+\runsection{Education} 
 
-\begin{samepage}
-\section{Languages}
-    Francais, English
-\end{samepage}
+    \employement%
+        {Master in Computer Science}{University of New Brunswick}
+        {January 2018 - in progress | Fredericton, New Brunswick, Canada}{%
+        }
 
-\begin{samepage}
-\section{Links} 
-    Github://\href{https://github.com/jeanlego}{\descript{jeanlego}}
-    LinkedIn://\href{https://www.linkedin.com/in/jean-philippe-legault-1489ab173}{\descript{jean-philippe-legault-1489ab173}}
-    \sectionsep
-\end{samepage}
+    \employement%
+        {Diploma in University teaching}{University of New Brunswick}
+        {April 2019 - May 2019 | Fredericton, New Brunswick, Canada}{%
+        }
 
-\begin{samepage}
-\section{Education} 
-    \subsection{Ecole Nationale D'Aerotechnique}
-    \vspace{0.1cm}
-    FA.2012 - WI.2014\\
-    \descript{Completed 56 credit towards a College degree as a Technician in Aerospace Manufacturing}
-    \sectionsep
+    \employement%
+        {Bachelor's in Computer Science with Honours}{University of New Brunswick}
+        {September 2015 - December 2017 | Fredericton, New Brunswick, Canada}{%
+        }
 
-    \subsection{University of New Brunswick}
-    
-    \vspace{0.1cm}
-    FA.2015 - FA.2017\\
-    \descript{Bachelor's in Computer Science with Honours}
-    
-    \vspace{0.1cm}
-    WI.2018 - Present\\
-    \descript{Masters in Computer Science}
-    \sectionsep
+    \employement%
+        {Technician in Aerospace Manufacturing}{Ecole Nationale D'Aerotechnique}
+        {September 2015 - December 2017 | Saint-Hubert, Quebec, Canada}{%
+        Completed 56 credit towards a College degree
+        }
 
-\end{samepage}
-\section{Skills}
+\runsection{Skills}
+
+    \bulletedlist{Languages}{
+        English (Fluent),
+        Francais (Mothers' Tongue)
+        }
+
     \bulletedlist{Programming Languages}{
         C,
         C++,
@@ -96,6 +96,7 @@
         Drafting,
         Sheet Metal Work,
         Welding,
+        Soldering,
         Electronic,
         Embedded System Development,
         CAD Drawing
@@ -113,7 +114,8 @@
         Hiking, 
         }
 
-\section{Working Experiences}
+\runsection{Working Experiences}
+
 
     \employement%
         {Instructor (CS2263 - Systems Software Development)}{University of New Brunswick}
@@ -165,7 +167,8 @@
         }
 
 
-\section{Project Contributions}
+\runsection{Project Contributions}
+
 
     \employement%
         {Odin II}{C based Verilog to Blif Compiler}
@@ -179,7 +182,7 @@
         }
 
     \employement%
-        {Eclipse OMR}{C style C++ based Cross-platform components for building reliable, high-performance language runtimes}
+        {Eclipse OMR}{C++ Cross-platform components for building language runtimes}
         {January 2018 - Present | \href{https://github.com/eclipse/omr}{github://eclipse/omr}}{%
         Began work on the basic implementation of an ARM64V8 specific OMR. 
         This involved making the full suite of hardware operation in the ARM64V8 documentation (or AArch64) available to the JIT compiler. 
@@ -187,7 +190,8 @@
         The project was lead by the IBM Runtimes Team in Ottawa, and work was done conjointly with members of the IBM Japan team.
         }
 
-\section{Awards}
+\runsection{Awards}
+
 
     \employement%
         {Dean's List}{University of New Brunswick}
@@ -195,7 +199,8 @@
         Awarded to students who maintained a GPA above 3.7 throughout the academic year.
         }
 
-\section{Scholarships}
+\runsection{Scholarships}
+
 
     \employement%
         {Sir George E. Foster}{University of New Brunswick}
@@ -210,7 +215,7 @@
         Research Funding towards a Masters in Computer Science.
         }
 
-%\section{Papers In Progress}
+%\runsection{Papers In Progress}
 
 \blfootnote{Presentors are \underline{underlined}}
 
@@ -244,23 +249,16 @@
     castle20
     }
 
-\end{flushleft}
 
 \clearpage
 
-\newgeometry{top=0.75cm, bottom=0.75cm, right=2.25cm, left=2.25cm}
-{\justifying
+\newgeometry{top=2.5cm, bottom=2.5cm, right=2.5cm, left=2.5cm}
 \doublespacing
-\color{black}
-\fontspec[Path = fonts/raleway/]{Raleway-Regular}
-\fontsize{12pt}{12pt}
-\selectfont
 
-\vspace*{60pt}
+\vspace*{20pt}
 
-\section{statement of purpose}
+\runsection{statement of purpose}
 
-\vspace{12pt}
 
 I wish to apply to do my Doctoral degree because I believe we can both benefit from this.
 Looking at my last two and a half years, you should quickly realize they were reasonably prolific.
@@ -284,9 +282,6 @@ I became responsible to train summer, honours, masters, and Ph.D students on the
 My main research topic, OMR, also got me to help newcommers on the project and prepare a significant amount of workshop talks and posters.
 All the training i had to give only grew my desire to teach and, during the summer of 2019, finally got to try; It was exilarating.
 
-\newpage 
-\vspace*{20pt}
-
 I know I have found my vocation, while my writing skill still need polishing, I believe that my teaching skill have tremendously improved since my journey started.
 I have interest in a vast area of topics, from machining, to CAD design, to electronic, to software developement.
 My vast interest allow me to have an open mind about different topic and use parralel knowledge to solve complex problems.
@@ -302,10 +297,10 @@ In applying to do my Ph.D under you, I whish to learn more and get more opportun
 I am gratefull that you took the time to read this and I hope to hear from you.
 
 \vspace*{20pt}
-\RaggedRight
 
-Yours sincerely,
- Jean-Philippe Legault
-}
+\noindent Yours sincerely,
+
+\indent Jean-Philippe Legault
+
 
 \end{document}

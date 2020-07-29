@@ -10,21 +10,14 @@
 
 \usepackage[document]{ragged2e}
 % Package Imports
-\usepackage[top=0.75cm, right=1.25cm, left=1.25cm, bottom=0.75cm]{geometry}
+\usepackage[top=1.75cm, right=1.75cm, left=1.75cm, bottom=1.75cm]{geometry}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
 \usepackage{xstring}
-
-        \usepackage{setspace}
-
-\pagestyle{fancy}
-\fancyhf{}
+\usepackage{setspace}
 \usepackage[utf8]{inputenc}
 \usepackage{babel,csquotes,xpatch}% recommended
 \usepackage[backend=biber,maxcitenames=10]{biblatex}
 
-% Publications
-%\renewcommand\refname{\vskip -1.5cm}
 
 % Color definitions
 \usepackage[usenames,dvipsnames]{xcolor} 
@@ -38,17 +31,6 @@
 \usepackage{lmodern}
 
 \setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight}
-
-% Date command
-\usepackage[absolute]{textpos}
-\usepackage[UKenglish]{isodate}
-\setlength{\TPHorizModule}{1mm}
-\setlength{\TPVertModule}{1mm}
-\newcommand{\lastupdated}{\begin{textblock}{60}(155,5)
-\color{date}\fontspec[Path = fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont 
-Last Updated on \today
-\end{textblock}}
 
 % Name command
 \newcommand{\namesection}[3]{
@@ -59,36 +41,40 @@ Last Updated on \today
 } \\[5pt]
 \centering{
 \color{headings}
-\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
+\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{12pt}{12pt}\selectfont #3}
 \noindent\makebox[\linewidth]{\color{headings}\rule{\paperwidth}{0.4pt}}
-\vspace{-15pt}
 }
 
-% Section seperators 
-\usepackage{titlesec}
-\titlespacing{\section}{0pt}{0pt}{0pt} 
-\titlespacing{\subsection}{0pt}{0pt}{0pt}
 \newcommand{\sectionsep}{\vspace{8pt}}
 
 % Headings command
-\titleformat{\section}{\color{headings}
-\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{}{0em}{}
+\newcommand{\runsection}[1]{%
+\vspace*{8pt}
+\begin{minipage}{\textwidth}\hspace*{-0.5cm}\color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont\uppercase{#1}\end{minipage}
+\normalfont
+\hspace*{0.5cm}
+}
 
 % Subeadings command
-\titleformat{\subsection}{
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
-
-\newcommand{\runsubsection}[1]{
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+\newcommand{\runsubsection}[1]{%
+\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase{#1} 
+\normalfont
+}
 
 % Descriptors command
-\newcommand{\descript}[1]{
-\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+\newcommand{\descript}[1]{%
+\color{subheadings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{12pt}{12pt}\selectfont {#1} \normalfont}
 
 % Location command
-\newcommand{\location}[1]{
-\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+\newcommand{\location}[1]{%
+\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{10pt}{12pt}\selectfont {#1} \normalfont}
 
+% Location command
+\newcommand{\normaltext}[1]{%
+\color{primary}\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{10pt}{12pt}\selectfont {#1} \normalfont}
+
+
+% better underline
 \usepackage{contour}
 \contourlength{0.8pt}
 \newcommand{\uline}[1]{%
@@ -96,32 +82,27 @@ Last Updated on \today
   \llap{\contour{white}{#1}}%
 }
 
-
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{
 \vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
 {\end{itemize}\vspace{-\topsep}}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Custom Citation
-
 % Custom cite command with a newline for authors and journal
 \DeclareCiteCommand{\singlecite}
     {\begin{minipage}{\textwidth}%
-    \usebibmacro{maintitle+title}%
-    \newline\nopunct\newblock%
-    \usebibmacro{author}%
-    \newline\nopunct\newblock\vspace{2pt}%
-    {\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont%
-        \usebibmacro{date}~|~\printlist{organization}\printlist{publisher}~|~\printlist{location}}
-    \newline\nopunct\newblock
-    \printfield{eventtitle}\printfield{booktitle}\usebibmacro{journal}%
+    \singlespacing%
+    \usebibmacro{maintitle+title}\\
+    \hspace{-1pt}\nopunct % fix punctuation at start of authorship
+    \usebibmacro{author}\\
+    {\color{headings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{10pt}{12pt}\selectfont%
+        \usebibmacro{date}~|~\printlist{organization}\printlist{publisher}~|~\printlist{location} \normalfont\\}
+    \normaltext{\printfield{eventtitle}\printfield{booktitle}\usebibmacro{journal}}\\
+    \usebibmacro{postnote}
     \end{minipage}
-    \sectionsep
     }
-    {\usebibmacro{postnote}}
 
-% comma separated
+
+% comma separated citations
 
 \usepackage{xparse}
 \ExplSyntaxOn
@@ -131,10 +112,10 @@ Last Updated on \today
  }
 \ExplSyntaxOff
 
-% Make the titles in bold
+% Make the titles in bold and uppercase
 \DeclareFieldFormat
     [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
-    {title}{\bf\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont #1 }
+    {title}{\bf\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{12pt}{12pt}\selectfont #1 \normalfont}
 
 \DeclareFieldFormat
     [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
@@ -143,7 +124,7 @@ Last Updated on \today
 \DeclareNameFormat
 [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
 {author}{%
-    \bf\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont%
+    \bf\color{subheadings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{12pt}{12pt}\selectfont%
     \ifnumequal{\value{listcount}}{1}
     {\ifgiveninits
         {\usebibmacro{name:family-given}
@@ -173,19 +154,34 @@ Last Updated on \today
             {\namepartgiven}
             {\namepartprefix}
             {\namepartsuffix}}}%
-    \usebibmacro{name:andothers}}
+    \usebibmacro{name:andothers}
+    \normalfont
+    }
 
-\newcommand{\bulletedlist}[2]{%
+% bulleted list
+\usepackage{etoolbox}
+\usepackage{pgffor}
+\newtoggle{firstmember}
+\newcommand*{\bulletedlist}[2]{%
 \begin{minipage}{\textwidth}
-\descript{#1 |}~\StrSubstitute{#2}{,}{\textbullet{}}
+\sloppy
+\runsubsection{#1~|}\\
+    \global\toggletrue{firstmember}%
+    \foreach \member in {#2} {%
+        \normaltext{\iftoggle{firstmember}{\member}{ \textbullet{} \member}}%
+        \global\togglefalse{firstmember}%
+    }%
 \end{minipage}
+
 \sectionsep
+
 }
 
+% employement
 \newcommand{\employement}[5]{
 \begin{minipage}{\textwidth}
-\runsubsection{#1~|}\descript{ #2}
-\location{#3}
+\runsubsection{#1~| }\descript{ #2}\\
+\location{#3}\\
 #4 
 \end{minipage}
 
@@ -193,12 +189,19 @@ Last Updated on \today
 
 }
 
+% publications
 \newcommand{\publication}[2]{%
-\section{#1}
+\runsection{#1}
 \mycite{#2}
+
+\sectionsep
+
 }
 
 % footnote without marker
 \makeatletter
 \def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
 \makeatother
+
+%no page number
+\pagenumbering{gobble}
