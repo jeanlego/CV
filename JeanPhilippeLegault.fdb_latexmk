@@ -1,0 +1,9 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "JeanPhilippeLegault.xdv" "JeanPhilippeLegault.pdf" "JeanPhilippeLegault" 0
+  "JeanPhilippeLegault.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "JeanPhilippeLegault.pdf"
+["xelatex"] 1596013146 "JeanPhilippeLegault.tex" "JeanPhilippeLegault.xdv" "JeanPhilippeLegault" 1596013186
+  (generated)
+  "JeanPhilippeLegault.xdv"
+  "JeanPhilippeLegault.log"

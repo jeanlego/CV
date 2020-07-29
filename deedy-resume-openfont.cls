@@ -11,6 +11,15 @@
 % Package Imports
 \usepackage[hmargin=1.25cm, vmargin=0.75cm]{geometry}
 \usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xstring}
+\usepackage[document]{ragged2e}
+
+\pagestyle{fancy}
+\fancyhf{}
+\usepackage[utf8]{inputenc}
+\usepackage{babel,csquotes,xpatch}% recommended
+\usepackage[backend=biber,maxcitenames=10000]{biblatex}
 
 % Publications
 \renewcommand\refname{\vskip -1.5cm}
@@ -25,7 +34,6 @@
 % Set main fonts
 \usepackage{fontspec}
 \usepackage{lmodern}
-\usepackage[utf8]{inputenc}
 
 \setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig}
 \setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight}
@@ -79,8 +87,111 @@ Last Updated on \today
 \newcommand{\location}[1]{
 \color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
 
+\usepackage{contour}
+\contourlength{0.8pt}
+\renewcommand{\underline}[1]{%
+  \underline{\smash{#1}\vphantom{T}}\vphantom{#1}%
+  \llap{\contour{white}{#1}}%
+}
+
+
 % Bullet Lists with fewer gaps command
 \newenvironment{tightemize}{
 \vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
 {\end{itemize}\vspace{-\topsep}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Custom Citation
+
+% Custom cite command with a newline for authors and journal
+\DeclareCiteCommand{\singlecite}
+    {\begin{minipage}{\textwidth}%
+    \usebibmacro{maintitle+title}%
+    \newline\nopunct\newblock%
+    \usebibmacro{author}%
+    \newline\nopunct\newblock\vspace{2pt}%
+    {\color{headings}\raggedright\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont%
+        \usebibmacro{date}~|~\printlist{organization}\printlist{publisher}~|~\printlist{location}}
+    \newline\nopunct\newblock
+    \printfield{eventtitle}\printfield{booktitle}\usebibmacro{journal}%
+    \end{minipage}
+    \sectionsep
+    }
+    {\usebibmacro{postnote}}
+
+% comma separated
+
+\usepackage{xparse}
+\ExplSyntaxOn
+\NewDocumentCommand{\mycite}{ m }
+ {
+  \clist_map_inline:nn { #1 } { \singlecite{##1} }
+ }
+\ExplSyntaxOff
+
+% Make the titles in bold
+\DeclareFieldFormat
+    [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
+    {title}{\bf\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont #1 }
+
+\DeclareFieldFormat
+    [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
+    {titlecase}{\MakeUppercase{#1}}
+
+\DeclareNameFormat
+[article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
+{author}{%
+    \bf\color{subheadings}\raggedright\scshape\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont%
+    \ifnumequal{\value{listcount}}{1}
+    {\ifgiveninits
+        {\usebibmacro{name:family-given}
+            {\namepartfamily}
+            {\namepartgiveni}
+            {\namepartprefix}
+            {\namepartsuffix}}
+        {\usebibmacro{name:family-given}
+            {\namepartfamily}
+            {\namepartgiven}
+            {\namepartprefix}
+            {\namepartsuffix}}%
+        \ifboolexpe{%
+        test {\ifdefvoid\namepartgiven}
+        and
+        test {\ifdefvoid\namepartprefix}}
+        {}
+        {\usebibmacro{name:revsdelim}}}
+    {\ifgiveninits
+        {\usebibmacro{name:given-family}
+            {\namepartfamily}
+            {\namepartgiveni}
+            {\namepartprefix}
+            {\namepartsuffix}}
+        {\usebibmacro{name:given-family}
+            {\namepartfamily}
+            {\namepartgiven}
+            {\namepartprefix}
+            {\namepartsuffix}}}%
+    \usebibmacro{name:andothers}}
+
+\newcommand{\bulletedlist}[2]{%
+\begin{minipage}{\textwidth}
+\descript{#1 |}~\StrSubstitute{#2}{,}{\textbullet{}}
+\end{minipage}
+\sectionsep 
+}
+
+\newcommand{\employement}[5]{
+\begin{minipage}{\textwidth}
+\runsubsection{#1~|}\descript{ #2}
+\location{#3}
+#4
+\end{minipage}
+ % blank line here is necessary
+\sectionsep
+}
+
+\newcommand{\publication}[2]{%
+\section{#1}
+\mycite{#2}
+}
 
