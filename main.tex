@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Developer CV
+% LaTeX Template
+% Version 1.0 (28/1/19)
+%
+% This template originates from:
+% http://www.LaTeXTemplates.com
+%
+% Authors:
+% Jan Vorisek (jan@vorisek.me)
+% Based on a template by Jan Küster (info@jankuester.com)
+% Modified for LaTeX Templates by Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[9.5pt]{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage{multicol} % header is two column
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE AND CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\columnize[vbottomalign]{
+		\raggedleft
+		\colorbox{white}{{\HUGE\textcolor{black}{{\MakeUppercase{Jean-Philippe}}}}}
+
+		\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Legault}}}}}
+
+		{\huge%
+			Researcher\\
+			Senior Developper
+			}
+			
+	}{
+		\icon{Phone}{12}{+1 514 603 8357}
+
+		\icon{At}{12}{\href{mailto:jeanphilippe.legault@unb.ca}{jeanphilippe.legault@unb.ca}}
+
+		\icon{Linkedin}{12}{\href{https://www.linkedin.com/in/jean-philippe-legault-1489ab173}{linkedin.com/jean-philippe-legault-1489ab173}}
+
+		\icon{Github}{12}{\href{https://github.com/jeanlego}{github.com/jeanlego}}
+	}
+% tighten the space here
+% \vspace*{-2.0\baselineskip}
+\columnize[vtopalign]{
+		During my masters in Computer Science, I have gained expertise on language runtimes and FPGA development.
+		My broad interests allow me to use lateral thinking to solve complex problems.
+		I can efficiently visualize problems, design solutions, and communicate abstract ideas, allowing me to be an effective team member.
+		My experience in academia and working as a senior developper have shaped me into an effective teacher.
+		Working on both commercial and open-source projects have made me adaptable to new workflows.
+	}{
+		\cvsect{Languages}
+
+		\textbf{French} - native
+
+		\textbf{English} - fluent
+
+		\cvsect{Research Interest}
+
+		\bulletedlist{
+			FPGA,
+			High-Level Synthesis,
+			Compilers,
+			Virtual Machines,
+			Embedded Systems,
+			Operating Systems,
+			Distributed Computing
+			}
+	}
+
+%----------------------------------------------------------------------------------------
+%	EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\cvsect{Experience}
+
+\begin{entrylist}
+	\entry
+		{2017 -- 3/2018}
+		{Front-end developer}
+		{Big Corporation Name Inc.}
+		{\lorem \lorem \lorem\\ \texttt{node.js}\slashsep\texttt{Vue.js}\slashsep\texttt{Electron}}
+	\entry
+		{2015 -- 2018\\\footnotesize{part time}}
+		{Full stack developer}
+		{Famous Eshop Inc.}
+		{\lorem\lorem\\ \texttt{PHP}\slashsep\texttt{JS}\slashsep\texttt{MariaDB}\slashsep\texttt{Linux}}
+	\entry
+		{2013 -- 2014\\\footnotesize{part time}}
+		{Junior PHP Developer}
+		{example.com}
+		{\lorem\lorem\\ \texttt{PHP}\slashsep\texttt{Laravel}}
+\end{entrylist}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+
+\cvsect{Education}
+
+\begin{entrylist}
+	\entry
+		{2013 -- 2017}
+		{Master's Degree}
+		{Another University Name}
+		{\lorem\lorem\lorem}
+	\entry
+		{2014}
+		{Postgraduate Diploma}
+		{A University Name}
+		{\lorem\lorem}
+	\entry
+		{2007 -- 2013}
+		{Bachelor's Degree}
+		{A University Name}
+		{\lorem\lorem}
+\end{entrylist}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

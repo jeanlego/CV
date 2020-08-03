@@ -17,7 +17,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{babel,csquotes,xpatch}% recommended
 \usepackage[backend=biber,maxcitenames=10]{biblatex}
-
+\usepackage{changepage}
 
 % Color definitions
 \usepackage[usenames,dvipsnames]{xcolor} 
@@ -25,6 +25,8 @@
 \definecolor{primary}{HTML}{2b2b2b} 
 \definecolor{headings}{HTML}{6A6A6A}
 \definecolor{subheadings}{HTML}{333333}
+
+\setlength\parindent{10pt}
 
 % Set main fonts
 \usepackage{fontspec}
@@ -38,7 +40,7 @@
 \fontsize{40pt}{60pt}
 \fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 
 \fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2
-} \\[5pt]
+} \\[8pt]
 \centering{
 \color{headings}
 \fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{12pt}{12pt}\selectfont #3}
@@ -49,21 +51,24 @@
 
 % Headings command
 \newcommand{\runsection}[1]{%
-\vspace*{8pt}
-\begin{minipage}{\textwidth}\hspace*{-0.5cm}\color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont\uppercase{#1}
-\hspace*{0.5cm}\end{minipage}
+\sectionsep
+\begin{adjustwidth}{-10pt}{0pt}\color{headings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{13pt}{14pt}\selectfont\uppercase{#1}\end{adjustwidth}
 \normalfont
 }
 
 % Subeadings command
 \newcommand{\runsubsection}[1]{%
-\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase{#1} 
+\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{11pt}{12pt}\selectfont\bfseries\uppercase{#1} 
 \normalfont
 }
 
+% Subeadings command
+\newcommand{\heading}[1]{%
+\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{11pt}{12pt}\selectfont {#1} \normalfont}
+
 % Descriptors command
 \newcommand{\descript}[1]{%
-\color{subheadings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{12pt}{12pt}\selectfont {#1} \normalfont}
+\color{subheadings}\scshape\fontspec[Path = fonts/lato/]{Lato-Lig}\fontsize{11pt}{12pt}\selectfont {#1} \normalfont}
 
 % Location command
 \newcommand{\location}[1]{%
@@ -88,17 +93,16 @@
 {\end{itemize}\vspace{-\topsep}}
 
 % Custom cite command with a newline for authors and journal
-\DeclareCiteCommand{\singlecite}
-    {\begin{minipage}{\textwidth}%
+\DeclareCiteCommand{\singlecite}{
+    \begin{minipage}{\textwidth}
     \singlespacing%
     \usebibmacro{maintitle+title}\\
     \hspace{-1pt}\nopunct % fix punctuation at start of authorship
     \usebibmacro{author}\\
     {\color{headings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{10pt}{12pt}\selectfont%
         \usebibmacro{date}~|~\printlist{organization}\printlist{publisher}~|~\printlist{location} \normalfont\\}
-    \normaltext{\printfield{eventtitle}\printfield{booktitle}\usebibmacro{journal}}\\
-    \usebibmacro{postnote}
-    \end{minipage}
+    \normaltext{\printfield{eventtitle}\printfield{booktitle}\usebibmacro{journal}\par\addvspace{1ex}
+    }\usebibmacro{postnote}\end{minipage}%
     }
 
 
@@ -106,10 +110,9 @@
 
 \usepackage{xparse}
 \ExplSyntaxOn
-\NewDocumentCommand{\mycite}{ m }
- {
-  \clist_map_inline:nn { #1 } { \singlecite{##1} }
- }
+\NewDocumentCommand{\mycite}{ m }{
+    \clist_map_inline:nn { #1 } { \singlecite{##1} }
+    }
 \ExplSyntaxOff
 
 % Make the titles in bold and uppercase
@@ -117,9 +120,9 @@
     [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
     {title}{\bf\color{subheadings}\fontspec[Path = fonts/lato/]{Lato-Reg}\fontsize{12pt}{12pt}\selectfont #1 \normalfont}
 
-\DeclareFieldFormat
-    [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
-    {titlecase}{\MakeUppercase{#1}}
+% \DeclareFieldFormat
+%     [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
+%     {titlecase}{\MakeUppercase{#1}}
 
 \DeclareNameFormat
 [article,book,inbook,incollection,inproceedings,patent,thesis,unpublished]
@@ -182,7 +185,7 @@
 \begin{minipage}{\textwidth}
 \runsubsection{#1~| }\descript{ #2}\\
 \location{#3}\\
-#4 
+\normaltext{#4}
 \end{minipage}
 
 \sectionsep
@@ -190,9 +193,27 @@
 }
 
 % publications
-\newcommand{\publication}[2]{%
+\newcommand{\publication}[2]{
 \runsection{#1}
-\hspace*{0.65cm}\mycite{#2}
+
+\indent\mycite{#2}
+
+\sectionsep
+
+}
+
+% person
+\newcommand{\person}[2]{
+\location{#1|}\normaltext{ #2}
+}
+
+% employement
+\newcommand{\reference}[5]{
+\begin{minipage}{\textwidth}
+\heading{#1~| }\descript{ #2}\\
+\location{#3}\\
+\normaltext{#4}
+\end{minipage}
 
 \sectionsep
 

@@ -4,4 +4,4 @@ clean:
 
 build:
 	$(MAKE) clean
-	latexmk -gg -f -xelatex JeanPhilippeLegault.tex
+	latexmk -CF -gg -f -lualatex main.tex
