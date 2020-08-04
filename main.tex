@@ -19,7 +19,6 @@
 %----------------------------------------------------------------------------------------
 %   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
-
 \documentclass[9.5pt]{developercv} % Default font size, values from 8-12pt are recommended
 \usepackage{multicol} % header is two column
 \usepackage{calc}
@@ -80,11 +79,11 @@
         \newlength{\topLen}
         \setlength{\topLen}{.12\textwidth}
         \newlength{\bottomLen}
-        \setlength{\bottomLen}{.17\textwidth}      
+        \setlength{\bottomLen}{.155\textwidth}      
 
     %%%%%%%%%% create the lines
         \hspace*{\fill}\rule{\lineWidth}{.4pt}\hspace*{\fill}
-        
+
         \vspace*{-\topLen}
         \hspace*{\fill}\rule{.4pt}{\topLen+\bottomLen}\hspace*{\fill}
         \vspace*{-\bottomLen}
@@ -108,15 +107,21 @@
 
         \cvsect{Languages}
 
+        \vspace*{-4pt}
         \bulletedlist{
             French---\texttt{native},
             English---\texttt{fluent}           
             }
 
-        \vspace*{6pt}
+        \vspace*{5pt}
 
+\ifdefined\academicCV
         \cvsect{Research Interest}
+\else
+        \cvsect{Interest}
+\fi
 
+        \vspace*{-4pt}
         \bulletedlist{
             Compilers,
             Distributed Computing,
@@ -126,11 +131,11 @@
             Operating Systems,
             Virtual Machines
             }
-
-        \vspace*{6pt}
+        \vspace*{5pt}
 
         \cvsect{Programming Languages}
 
+        \vspace*{-4pt}
         \bulletedlist{
             ArmV8,
 			Bash,
@@ -290,6 +295,8 @@
         {23,500\$/yr. research fellowship  with the Centre for Advanced Studies---Atlantic on the Eclipse OMR project}
 \end{entrylist}
 
+\ifdefined\academicCV
+
 \cvsect{Travel Grant}
 
 \begin{entrylist}
@@ -320,6 +327,7 @@
 
 \end{entrylist}
 
+\vspace*{\baselineskip}
 \clearpage
 
 \cvsect{academic references}
@@ -394,5 +402,7 @@ I am grateful that you took the time to read this and am looking forward to hear
 
 \noindent Sincerely,\\
 \indent Jean-Philippe Legault
+
+\fi
 
 \end{document}
