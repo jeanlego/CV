@@ -22,6 +22,7 @@
 
 \documentclass[9.5pt]{developercv} % Default font size, values from 8-12pt are recommended
 \usepackage{multicol} % header is two column
+\usepackage{calc}
 
 \addbibresource{publications.bib}
 
@@ -53,7 +54,6 @@
             Researcher\\[2pt]
             Senior Developper}
 
-        \vspace*{\baselineskip}
         \columnbreak
         
         \vspace*{\fill}
@@ -70,24 +70,29 @@
 
         \icon{Github}{12}{\href{https://github.com/jeanlego}{github.com/jeanlego}}
 
-        \vspace*{\baselineskip}
     \end{multicols}
-	
-    \vspace*{-2.0\baselineskip}%
-    {\color{linecolor} \hspace*{\fill}\rule{.5\textwidth}{.4pt}\hspace*{\fill}}
+	\vspace*{-\baselineskip}
 
-    \vspace*{-.17\textwidth}
-    {\color{linecolor} \hspace*{\fill}\rule{.4pt}{.34\textwidth}\hspace*{\fill}}
-    \vspace*{-.17\textwidth}
+    {\color{linecolor}
+    %%%%%%%%%% params
+        \newlength{\lineWidth}
+        \setlength{\lineWidth}{0.5\textwidth}        
+        \newlength{\topLen}
+        \setlength{\topLen}{.12\textwidth}
+        \newlength{\bottomLen}
+        \setlength{\bottomLen}{.17\textwidth}      
 
-    \vspace*{-2.0\baselineskip}%
+    %%%%%%%%%% create the lines
+        \hspace*{\fill}\rule{\lineWidth}{.4pt}\hspace*{\fill}
+        
+        \vspace*{-\topLen}
+        \hspace*{\fill}\rule{.4pt}{\topLen+\bottomLen}\hspace*{\fill}
+        \vspace*{-\bottomLen}
+    }
 
-
-
+    \vspace*{-\baselineskip}
     \begin{multicols}{2}
         
-        \vspace*{\baselineskip}
-
         \RTLpar\sloppy
 
         During my master's in Computer Science, I have gained expertise in language runtimes and FPGA development.
@@ -98,9 +103,6 @@
 
         \vspace*{\fill}
         \columnbreak
-
-        \vspace*{\baselineskip}
-        \vspace*{4pt} % fix a small bug with colorboxes
 
         \justifying \sloppy
 
