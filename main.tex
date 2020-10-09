@@ -19,7 +19,7 @@
 %----------------------------------------------------------------------------------------
 %   PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
-\documentclass[9.5pt]{developercv} % Default font size, values from 8-12pt are recommended
+\documentclass{developercv} % Default font size, values from 8-12pt are recommended
 \usepackage{multicol} % header is two column
 \usepackage{calc}
 \usepackage{hyperref}
@@ -35,129 +35,129 @@
 %----------------------------------------------------------------------------------------
 
 { \topskip0pt \parskip0pt \setlength{\columnsep}{24pt}
- 
-    \begin{multicols}{2}
 
-        \vspace*{\fill}
-        \raggedleft
+\begin{multicols}{2}
 
-        \colorbox{white}{{\HUGE\textcolor{black}{{\MakeUppercase{Jean-Philippe}}}}}
+	\vspace*{\fill}
+	\raggedleft
 
-        \colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Legault}}}}}
+	\colorbox{white}{{\HUGE\textcolor{black}{{\MakeUppercase{Jean-Philippe}}}}}
 
-        {\huge%
-            Researcher\\[2pt]
-            Senior Developer}
+	\colorbox{black}{{\HUGE\textcolor{white}{\textbf{\MakeUppercase{Legault}}}}}
 
-        \columnbreak
-        
-        \vspace*{\fill}
+	{\huge%
+		Researcher\\[2pt]
+		Senior Developer}
 
-        {%
-            \raggedright
-            \tt
+	\columnbreak
 
-            % minor fix for map icon
-            \hspace*{1pt}\icon{MapMarker}{12}{\hspace*{2pt}Douglas, New Brunswick, Canada}
-            \vspace*{5pt}
+	\vspace*{\fill}
 
-            \icon{Phone}{12}{+1 514 603 8357}
-            \vspace*{5pt}
+	{%
+		\raggedright
+		\tt
 
-            \icon{At}{12}{\href{mailto:jeanphilippe.legault@unb.ca}{jeanphilippe.legault@unb.ca}}
-            \vspace*{5pt}
+		% minor fix for map icon
+		\hspace*{1pt}\icon{MapMarker}{12}{\hspace*{2pt}Douglas, New Brunswick, Canada}
+		\vspace*{5pt}
 
-            \icon{Linkedin}{12}{\href{https://www.linkedin.com/in/jean-philippe-legault-1489ab173}{jean-philippe-legault-1489ab173}}
-            \vspace*{5pt}
+		\icon{Phone}{12}{+1 514 603 8357}
+		\vspace*{5pt}
 
-            \icon{Github}{12}{\href{https://github.com/jeanlego}{jeanlego}}
+		\icon{At}{12}{\href{mailto:jeanphilippe.legault@unb.ca}{jeanphilippe.legault@unb.ca}}
+		\vspace*{5pt}
 
-        }
+		\icon{Linkedin}{12}{\href{https://www.linkedin.com/in/jean-philippe-legault-1489ab173}{jean-philippe-legault-1489ab173}}
+		\vspace*{5pt}
 
-    \end{multicols}
-    \vspace*{-\baselineskip}
+		\icon{Github}{12}{\href{https://github.com/jeanlego}{jeanlego}}
 
-    {\color{linecolor}
-    %%%%%%%%%% params
-        \newlength{\lineWidth}
-        \setlength{\lineWidth}{0.5\textwidth}        
-        \newlength{\topLen}
-        \setlength{\topLen}{.12\textwidth}
-        \newlength{\bottomLen}
-        \setlength{\bottomLen}{.155\textwidth}      
+	}
 
-    %%%%%%%%%% create the lines
-        \hspace*{\fill}\rule{\lineWidth}{.4pt}\hspace*{\fill}
+\end{multicols}
+\vspace*{-\baselineskip}
 
-        \vspace*{-\topLen}
-        \hspace*{\fill}\rule{.4pt}{\topLen+\bottomLen}\hspace*{\fill}
-        \vspace*{-\bottomLen}
-    }
+{\color{linecolor}
+	%%%%%%%%%% params
+	\newlength{\lineWidth}
+	\setlength{\lineWidth}{0.5\textwidth}
+	\newlength{\topLen}
+	\setlength{\topLen}{.12\textwidth}
+	\newlength{\bottomLen}
+	\setlength{\bottomLen}{.155\textwidth}
 
-    \vspace*{-\baselineskip}
-    \begin{multicols}{2}
-        
-        \RTLpar\sloppy
+	%%%%%%%%%% create the lines
+	\hspace*{\fill}\rule{\lineWidth}{.4pt}\hspace*{\fill}
 
-        During my master's in Computer Science, I have gained expertise in language runtimes and FPGA development.
-        My broad interests allow me to use lateral thinking to solve complex problems.
-        I can efficiently visualize problems, design solutions, and communicate abstract ideas, allowing me to be an effective team member.
-        My experience in academia and working as a senior developer has shaped me into an effective teacher.
-        Working on both commercial and open-source projects has made me adaptable to new workflows.
+	\vspace*{-\topLen}
+	\hspace*{\fill}\rule{.4pt}{\topLen+\bottomLen}\hspace*{\fill}
+	\vspace*{-\bottomLen}
+}
 
-        \vspace*{\fill}
-        \columnbreak
+\vspace*{-\baselineskip}
+\begin{multicols}{2}
 
-        \justifying \sloppy
+	\RTLpar\sloppy
 
-        \cvsect{Languages}
+	During my master's in Computer Science, I have gained expertise in language runtimes and FPGA development.
+	My broad interests allow me to use lateral thinking to solve complex problems.
+	I can efficiently visualize problems, design solutions, and communicate abstract ideas, allowing me to be an effective team member.
+	My experience in academia and working as a senior developer has shaped me into an effective teacher.
+	Working on both commercial and open-source projects has made me adaptable to new workflows.
 
-        \vspace*{-4pt}
-        \bulletedlist{
-            French---\texttt{native},
-            English---\texttt{fluent}           
-            }
+	\vspace*{\fill}
+	\columnbreak
 
-        \vspace*{5pt}
+	\justifying \sloppy
 
-\ifdefined\academicCV {%
-        \cvsect{Research Interest}
-} \else {%
-        \cvsect{Interest}
-} \fi
+	\cvsect{Languages}
 
-        \vspace*{-4pt}
-        \bulletedlist{
-            Software and Computer Engineering:\\Compilers,
-            Distributed Computing,
-            Embedded Systems,
-            FPGA,
-            High-Level Synthesis,
-            Operating Systems,
-            Virtual Machines
-            }
-        \vspace*{5pt}
+	\vspace*{-4pt}
+	\bulletedlist{
+		French---\texttt{native},
+		English---\texttt{fluent}
+	}
 
-        \cvsect{Programming Languages}
+	\vspace*{5pt}
 
-        \vspace*{-4pt}
-        \bulletedlist{
-            ArmV8,
-            Bash,
-            Blif,
-            C++,
-            C,
-            Java,
-            LaTex,
-            Perl,
-            Python,
-            Verilog,
-            VHDL            
-            }
+	\ifdefined\academicCV {%
+		\cvsect{Research Interest}
+	} \else {%
+		\cvsect{Interest}
+	} \fi
 
-        \vspace*{\fill}
-    \end{multicols}
-    }
+	\vspace*{-4pt}
+	\bulletedlist{
+		Software and Computer Engineering:\\Compilers,
+		Distributed Computing,
+		Embedded Systems,
+		FPGA,
+		High-Level Synthesis,
+		Operating Systems,
+		Virtual Machines
+	}
+	\vspace*{5pt}
+
+	\cvsect{Programming Languages}
+
+	\vspace*{-4pt}
+	\bulletedlist{
+		ArmV8,
+		Bash,
+		Blif,
+		C++,
+		C,
+		Java,
+		LaTex,
+		Perl,
+		Python,
+		Verilog,
+		VHDL
+	}
+
+	\vspace*{\fill}
+\end{multicols}
+}
 
 % reset settings
 \justifying
@@ -165,98 +165,98 @@
 \cvsect{Education}
 
 \begin{entrylist}
-    \entry
-        {2018 -- cur.}
-        {Master in Computer Science}
-        {University of New Brunswick | Canada}
-        {Having finished my courses work and my thesis, I hope to defend in September of 2020}
-    \entry
-        {2019}
-        {Diploma in University teaching}
-        {University of New Brunswick | Canada}
-        {}
-    \entry
-        {2015 -- 2017}
-        {Bachelor's in Computer Science with Honours}
-        {University of New Brunswick | Canada}
-        {}
+	\entry
+	{2018 -- cur.}
+	{Master in Computer Science}
+	{University of New Brunswick | Canada}
+	{Having finished my courses work and my thesis, I hope to defend in September of 2020}
+	\entry
+	{2019}
+	{Diploma in University teaching}
+	{University of New Brunswick | Canada}
+	{}
+	\entry
+	{2015 -- 2017}
+	{Bachelor's in Computer Science with Honours}
+	{University of New Brunswick | Canada}
+	{}
 \end{entrylist}
 
 \cvsect{Awards}
 
 \begin{entrylist}
-    \entry
-        {2015 -- 2016}
-        {Dean's List}
-        {University of New Brunswick | Canada}
-        {Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
+	\entry
+	{2015 -- 2016}
+	{Dean's List}
+	{University of New Brunswick | Canada}
+	{Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
 \end{entrylist}
 
 \cvsect{Scholarships}
 
 \begin{entrylist}
-    \entry
-        {2015 -- 2016}
-        {Sir George E. Foster}
-        {University of New Brunswick | Canada}
-        {2000\$/yr. Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
-        
-    \entry
-        {2018 -- 2020}
-        {Research Fellowship}
-        {University of New Brunswick | Canada}
-        {23,500\$/yr. research fellowship  with the Centre for Advanced Studies---Atlantic on the Eclipse OMR project}
+	\entry
+	{2015 -- 2016}
+	{Sir George E. Foster}
+	{University of New Brunswick | Canada}
+	{2000\$/yr. Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
+
+	\entry
+	{2018 -- 2020}
+	{Research Fellowship}
+	{University of New Brunswick | Canada}
+	{23,500\$/yr. research fellowship  with the Centre for Advanced Studies---Atlantic on the Eclipse OMR project}
 \end{entrylist}
 
 \cvsect{Experience}
 
 \begin{entrylist}
-    \entry{ Contracts\\
-            {\footnotesize SM-2019}\\
-            }
-        {Instructor}
-        {University of New Brunswick | Canada}{ 
-            \textbullet{} CS2263 - Systems Software Development
-            \begin{quoting}
-            Procedural program development and supporting tools, using the C language. 
-            Topics include implementation of data structures, memory management, compilation/linking, building, debugging, and version control. 
-            \end{quoting}
-            }
+	\entry{ Contracts\\
+	{\footnotesize SM-2019}\\
+	}
+	{Instructor}
+	{University of New Brunswick | Canada}{
+	\textbullet{} CS2263 - Systems Software Development
+	\begin{quoting}
+		Procedural program development and supporting tools, using the C language.
+		Topics include implementation of data structures, memory management, compilation/linking, building, debugging, and version control.
+	\end{quoting}
+	}
 
-    \entry{ Contracts\\
-            {\footnotesize WI-2018}\\
-            {\footnotesize SM-2018}\\
-            {\footnotesize FA-2018}\\
-            }
-        {Teaching Assistant}
-        {University of New Brunswick | Canada}
-        {        
-            \textbullet{} Computability and Formal Languages\\
-            \textbullet{} Professional Practices\\
-            \textbullet{} Professional Practices\\
-            }
+	\entry{ Contracts\\
+	{\footnotesize WI-2018}\\
+	{\footnotesize SM-2018}\\
+	{\footnotesize FA-2018}\\
+	}
+	{Teaching Assistant}
+	{University of New Brunswick | Canada}
+	{
+	\textbullet{} Computability and Formal Languages\\
+	\textbullet{} Professional Practices\\
+	\textbullet{} Professional Practices\\
+	}
 
-    \entry{ Contracts\\
-            {\footnotesize FA-2018}\\
-            }
-        {Tutor}
-        {University of New Brunswick | Canada}{        
-            \textbullet{} Operating Systems I (CS3413) Rachelle Potter
-            }
-            
-    \entry
-        {2015 -- 2018}
-        {Electronic and Software Technician}
-        {Canada Electronic Parts Online Inc. | Canada}{  
-            Repairing electronic devices, i.e. smart watches, televisions, computers.
-            \begin{tightemize}
-            \item Played a significant role in increasing sales and revenue by increasing outreach.
-            \item Broadened the company expertise in electronic repairs and introduced tooling and techniques to repair devices with surface mount components.
-            \item Increased repairs success rate and revenue.
-            \item Introduced software-based repairs and debugging (i.e. reflashing lost IMEI or CMOS)
-            \item Introduced corrupted or defective hard drive data recovery.
-            \end{tightemize}
-            }
+	\entry{ Contracts\\
+	{\footnotesize FA-2018}\\
+	}
+	{Tutor}
+	{University of New Brunswick | Canada}{
+	\textbullet{} Operating Systems I (CS3413) Rachelle Potter
+	}
+
+	\entry
+	{2015 -- 2018}
+	{Electronic and Software Technician}
+	{Canada Electronic Parts Online Inc. | Canada}{
+		Repairing electronic devices, i.e. smart watches, televisions, computers.
+		\begin{tightemize}
+			\item Played a significant role in increasing sales and revenue by increasing outreach.
+			\item Broadened the company expertise in electronic repairs and introduced tooling and techniques to repair devices with surface mount components.
+			\item Increased repairs success rate and revenue.
+			\item Introduced software-based repairs and debugging (i.e. reflashing lost IMEI or CMOS)
+			\item Introduced corrupted or defective hard drive data recovery.
+		\end{tightemize}
+	}
 
 \end{entrylist}
 
@@ -264,245 +264,245 @@
 
 \begin{entrylist}
 
-    \entry
-        {2018 -- cur.}
-        {Eclipse OMR}
-        {\href{https://github.com/eclipse/omr}{github://eclipse/omr}}{ 
-            Responsible for initiating the work on the basic implementation of an ARM64V8 specific OMR; This involved making the full suite of hardware operation in the ARM64V8 documentation (or AArch64) available to the JIT compiler. 
-            Weekly meetings were held on infrastructure design and implementation. 
-            The project was lead by the IBM Runtimes Team in Ottawa, and work was done conjointly with members of the IBM Japan team.
-            }
+	\entry
+	{2018 -- cur.}
+	{Eclipse OMR}
+	{\href{https://github.com/eclipse/omr}{github://eclipse/omr}}{
+		Responsible for initiating the work on the basic implementation of an ARM64V8 specific OMR; This involved making the full suite of hardware operation in the ARM64V8 documentation (or AArch64) available to the JIT compiler.
+		Weekly meetings were held on infrastructure design and implementation.
+		The project was lead by the IBM Runtimes Team in Ottawa, and work was done conjointly with members of the IBM Japan team.
+	}
 
-    \entry
-        {2017 -- cur.}
-        {Odin II}
-        {\href{https://github.com/verilog-to-routing/vtr-verilog-to-routing/graphs/contributors}{github://verilog-to-routing}}{ 
-            Maintain the Front-End Verilog Synthesis tool of the Verilog to Routing Project.
-            \begin{tightemize}
-            \item Managing other developers and review their merge requests.
-            \item Fix Bugs and broken features.
-            \item Build new features and improve the tool usability and documentation for both developers and users.
-            \end{tightemize}
-            }
+	\entry
+	{2017 -- cur.}
+	{Odin II}
+	{\href{https://github.com/verilog-to-routing/vtr-verilog-to-routing/graphs/contributors}{github://verilog-to-routing}}{
+		Maintain the Front-End Verilog Synthesis tool of the Verilog to Routing Project.
+		\begin{tightemize}
+			\item Managing other developers and review their merge requests.
+			\item Fix Bugs and broken features.
+			\item Build new features and improve the tool usability and documentation for both developers and users.
+		\end{tightemize}
+	}
 
-    \entry
-        {2019 \\{\footnotesize Feature contract}}
-        {Butterfly Energy Systems}
-        {\href{http://www.butterflyenergy.ca/home.php}{http://www.butterflyenergy.ca}}{ 
-            Responsible to track down a null pointer exception in a multithreaded C++ codebase.
-            Traced back to a race condition because of uncaught spurious wake of the threads.
-            }
+	\entry
+	{2019 \\{\footnotesize Feature contract}}
+	{Butterfly Energy Systems}
+	{\href{http://www.butterflyenergy.ca/home.php}{http://www.butterflyenergy.ca}}{
+	Responsible to track down a null pointer exception in a multithreaded C++ codebase.
+	Traced back to a race condition because of uncaught spurious wake of the threads.
+	}
 
 \end{entrylist}
 
 \cvsect{Data Interchange Formats}
 
 \bulletedlist{
-    JSON,
-    XML,
-    TOML,
-    YAML
-    }
+	JSON,
+	XML,
+	TOML,
+	YAML
+}
 
 \vspace*{\baselineskip}
 \cvsect{Tools}
 
 \bulletedlist{
-    Make,
-    CMake,
-    Bison,
-    Flex,
-    Bash,
-    Git,
-    Jenkins,
-    Docker,
-    KVM,
-    Cross-Compilers,
-    Quartus,
-    Verilog-To-Routing,
-    GDB,
-    Valgrind,
-    AutoCAD,
-    FreeCAD,
-    Office Suite,
-    CatiaV5
-    }
+	Make,
+	CMake,
+	Bison,
+	Flex,
+	Bash,
+	Git,
+	Jenkins,
+	Docker,
+	KVM,
+	Cross-Compilers,
+	Quartus,
+	Verilog-To-Routing,
+	GDB,
+	Valgrind,
+	AutoCAD,
+	FreeCAD,
+	Office Suite,
+	CatiaV5
+}
 
 \vspace*{\baselineskip}
 \cvsect{Operating Systems}
 
 \bulletedlist{
-    Linux,
-    BSD,
-    OSx,
-    Windows
-    }
+	Linux,
+	BSD,
+	OSx,
+	Windows
+}
 
 \vspace*{\baselineskip}
 \cvsect{Other Knowledge}
 
 \bulletedlist{
-    Networking,
-    Linux Development,
-    Drafting,
-    Sheet Metal Work,
-    Welding,
-    Electronic,
-    Embedded System Development,
-    CAD Drawing
-    }
+	Networking,
+	Linux Development,
+	Drafting,
+	Sheet Metal Work,
+	Welding,
+	Electronic,
+	Embedded System Development,
+	CAD Drawing
+}
 
 \vspace*{\baselineskip}
 \cvsect{Interest}
 
 \bulletedlist{
-    Electronics,
-    Networking, 
-    Programming, 
-    Fabrication, 
-    Machining, 
-    Wood Working, 
-    Automation, 
-    Backcountry Camping, 
-    Hiking, 
-    }
+	Electronics,
+	Networking,
+	Programming,
+	Fabrication,
+	Machining,
+	Wood Working,
+	Automation,
+	Backcountry Camping,
+	Hiking,
+}
 
 \ifdefined\academicCV {%
 
-    \vspace*{\baselineskip}
-    \cvsect{Travel Grant}
+	\vspace*{\baselineskip}
+	\cvsect{Travel Grant}
 
-    \begin{entrylist}
+	\begin{entrylist}
 
-    \shortentry{2020}{International Symposium on FPGA}{Monterey, California, United-States}
-    \shortentry{2019}{Cascon}{Markham, Ontario, Canada}
-    \shortentry{2018}{Cascon}{Markham, Ontario, Canada}
-    \shortentry{2018}{Castle}{Markham, Ontario, Canada}
-    \shortentry{2018}{Splash}{Boston, Massachusetts, Canada}
-    \shortentry{2018}{CMC Microsystem TEXPO}{Toronto, Ontario, Canada}
+		\shortentry{2020}{International Symposium on FPGA}{Monterey, California, United-States}
+		\shortentry{2019}{Cascon}{Markham, Ontario, Canada}
+		\shortentry{2018}{Cascon}{Markham, Ontario, Canada}
+		\shortentry{2018}{Castle}{Markham, Ontario, Canada}
+		\shortentry{2018}{Splash}{Boston, Massachusetts, Canada}
+		\shortentry{2018}{CMC Microsystem TEXPO}{Toronto, Ontario, Canada}
 
-    \end{entrylist}
+	\end{entrylist}
 
-    \vspace*{\baselineskip}
-    \cvsect{Mentoring {\footnotesize(Unofficial Supervision)}}
+	\vspace*{\baselineskip}
+	\cvsect{Mentoring {\footnotesize(Unofficial Supervision)}}
 
-    \begin{entrylist}
+	\begin{entrylist}
 
-    \shortentry{2020 -- cur.}{Daniel Stokes}{Honours, B.CS., University of Waikato, New Zealand}
-    \shortentry{2020 -- cur.}{Eve MacDonald}{Work Term, B.EE, University of New Brunswick, Canada}
-    \shortentry{2020}{Shrey Vyas}{Work Term, M.CS, University of New Brunswick, Canada}
-    \shortentry{2019 -- 2020}{Mohammad Sohrabi}{Ph.D. CS, University of New Brunswick, Canada}
-    \shortentry{2019 -- cur.}{Seyed Alireza Damghani}{M.  CS, University of New Brunswick, Canada}
-    \shortentry{2019}{Michael Flawn}{Honours, B.CS., University of New Brunswick, Canada}
-    \shortentry{2019}{Alexandrea Demmings}{Work Term, B.SwE, University of New Brunswick, Canada}
-    \shortentry{2019}{Julie Brown}{Work Term, B.CEE, University of New Brunswick, Canada}
-    \shortentry{2018}{Nasrin Eshraghi Ivari}{Ph.D. CS University of New Brunswick, Canada}
+		\shortentry{2020 -- cur.}{Daniel Stokes}{Honours, B.CS., University of Waikato, New Zealand}
+		\shortentry{2020 -- cur.}{Eve MacDonald}{Work Term, B.EE, University of New Brunswick, Canada}
+		\shortentry{2020}{Shrey Vyas}{Work Term, M.CS, University of New Brunswick, Canada}
+		\shortentry{2019 -- 2020}{Mohammad Sohrabi}{Ph.D. CS, University of New Brunswick, Canada}
+		\shortentry{2019 -- cur.}{Seyed Alireza Damghani}{M.  CS, University of New Brunswick, Canada}
+		\shortentry{2019}{Michael Flawn}{Honours, B.CS., University of New Brunswick, Canada}
+		\shortentry{2019}{Alexandrea Demmings}{Work Term, B.SwE, University of New Brunswick, Canada}
+		\shortentry{2019}{Julie Brown}{Work Term, B.CEE, University of New Brunswick, Canada}
+		\shortentry{2018}{Nasrin Eshraghi Ivari}{Ph.D. CS University of New Brunswick, Canada}
 
-    \end{entrylist}
+	\end{entrylist}
 
 } \fi
 
 \ifdefined\academicCV {%
 
-    \nocite{*}
-    \blfootnote{Presentors are \underline{underlined}}
+	\nocite{*}
+	\blfootnote{Presentors are \underline{underlined}}
 
-    \defbibheading{pip}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Papers In Progress}\vspace*{-6pt}}
-    \printbibliography[heading=pip, keyword=inprogresspapers]
+	\defbibheading{pip}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{In Proceeding Papers}\vspace*{-6pt}}
+	\printbibliography[heading=pip, keyword=inprogresspapers]
 
-    \defbibheading{pubp}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Published Papers}\vspace*{-6pt}}
-    \printbibliography[heading=pubp, keyword=publishedpapers]
+	\defbibheading{pubp}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Published Papers}\vspace*{-6pt}}
+	\printbibliography[heading=pubp, keyword=publishedpapers]
 
-    \defbibheading{diss}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Dissertations}\vspace*{-6pt}}
-    \printbibliography[heading=diss, keyword=dissertations]
+	\defbibheading{diss}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Dissertations}\vspace*{-6pt}}
+	\printbibliography[heading=diss, keyword=dissertations]
 
-    \defbibheading{talks}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Talks}\vspace*{-6pt}}
-    \printbibliography[heading=talks, keyword=talks]
+	\defbibheading{talks}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Talks}\vspace*{-6pt}}
+	\printbibliography[heading=talks, keyword=talks]
 
-    \defbibheading{poster}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Conference Posters}\vspace*{-6pt}}
-    \printbibliography[heading=poster, keyword=poster]
+	\defbibheading{poster}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Conference Posters}\vspace*{-6pt}}
+	\printbibliography[heading=poster, keyword=poster]
 
 } \fi
 
 \ifdefined\academicCV {%
-    \vspace*{-6pt}
-    \vspace*{\baselineskip}
-    \cvsect{Academic References}
+	\vspace*{-6pt}
+	\vspace*{\baselineskip}
+	\cvsect{Academic References}
 } \else {%
-    \clearpage
-    \cvsect{References}
+	\clearpage
+	\cvsect{References}
 } \fi
 
 \begin{entrylist}
 
-    \entry%
-        {Dr. Kenneth B. Kent}{Thesis Supervisor}
-        {University of New Brunswick | Fredericton, New Brunswick, Canada}
-        {\texttt{ken@unb.ca | +1 506 451 6971}\\
-            Supervised me during my master's thesis, and is the code owner of the Odin II project.
-            }
+	\entry%
+	{Dr. Kenneth B. Kent}{Thesis Supervisor}
+	{University of New Brunswick | Fredericton, New Brunswick, Canada}
+	{\texttt{ken@unb.ca | +1 506 451 6971}\\
+		Supervised me during my master's thesis, and is the code owner of the Odin II project.
+	}
 
-    \entry%
-        {Dr. Paul Cook}{Assistant Dean}
-        {University of New Brunswick | Fredericton, New Brunswick, Canada}
-        {\texttt{paul.cook@unb.ca | +1 506 447 3466}\\
-            Responsible for undergraduate affairs, he was my superior during my work as an instructor.
-            }
+	\entry%
+	{Dr. Paul Cook}{Assistant Dean}
+	{University of New Brunswick | Fredericton, New Brunswick, Canada}
+	{\texttt{paul.cook@unb.ca | +1 506 447 3466}\\
+		Responsible for undergraduate affairs, he was my superior during my work as an instructor.
+	}
 
+	\entry%
+	{Dr. Panos Patros}{Mentor and External Collaborator}
+	{University of Waikato, Waikato, New Zealand}
+	{\texttt{panos.patros@waikato.ac.nz | +64 7 838 4651 EXT:4651}\\
+		Working under the CASA group, he taught me "Introduction to Java."
+		He later mentored me during my honours thesis, which spun off a joint paper with him.
+		I am currently mentoring one of his students in New Zealand.
+	}
 
-    \entry%
-        {Dr. Panos Patros}{Mentor and External Collaborator}
-        {University of Waikato, Waikato, New Zealand}
-        {\texttt{panos.patros@waikato.ac.nz | +64 7 838 4651 EXT:4651}\\
-            Working under the CASA group, he taught me "Introduction to Java."
-            He later mentored me during my honours thesis, which spun off a joint paper with him.
-            I am currently mentoring one of his students in New Zealand.
-            }
-
-    \entry%
-        {Aaron G. Graham}{Research Assistant}
-        {University of New Brunswick, Fredericton, New Brunswick, Canada}
-        {\texttt{aaron.graham@unb.ca | +1 506 453 3567}\\
-            Responsible for managing day to day operations across projects in CASA, he is my superior on the Eclipse OMR project.
-            }
+	\entry%
+	{Aaron G. Graham}{Research Assistant}
+	{University of New Brunswick, Fredericton, New Brunswick, Canada}
+	{\texttt{aaron.graham@unb.ca | +1 506 453 3567}\\
+		Responsible for managing day to day operations across projects in CASA, he is my superior on the Eclipse OMR project.
+	}
 
 \end{entrylist}
 
-\ifdefined\academicCV {%
+\ifdefined\coverLetter {%
 
-    \clearpage
+	\clearpage
 
-    \newgeometry{top=2.5cm, bottom=2.5cm, right=2.5cm, left=2.5cm}
+	\newgeometry{top=2.5cm, bottom=2.5cm, right=2.5cm, left=2.5cm}
 
-    \cvsect{statement of purpose}
+	\cvsect{statement of purpose}
 
-    \large
-    \justifying
-    \parskip 0ex plus 0.2ex minus 0.1ex
-    \parindent1.5em
-    \fontsize{12}{24}\selectfont
+	\large
+	\justifying
+	\parskip 0ex plus 0.2ex minus 0.1ex
+	\parindent1.5em
+	\fontsize{12}{24}\selectfont
 
-    I have worked on both commercial and open-source tools.
-    My broad interest allows me to have an open mind about different topics and use lateral thinking to solve complex problems.
-    I have done my undergraduate and master's at the University of New Brunswick, and I am now looking for new opportunities.
+	I have worked on both commercial and open-source tools.
+	My broad interest allows me to have an open mind about different topics and use lateral thinking to solve complex problems.
+	I have done my undergraduate and master's at the University of New Brunswick, and I am now looking for new opportunities.
 
-    During my undergraduate degree, I met a teacher that sparked my desire to do research.
-    I tailored my undergraduate for this research and, two years later, applied to an honours with the Centre for Advanced Studies--Atlantic. 
-    The CASA research group offered me a scholarship for a master's on the Eclipse OMR project.
-    Throughout my Masters, I became the maintainer of the Odin II project and co-authored five papers on the subject.
-    I became responsible for training summer, honours, masters, and Ph.D. students for Odin II.
-    During the summer of 2019, an opportunity opened up to teach, and I had three weeks to prepare.
-    I was responsible for teaching 70 students about C for their first time; 
-    Within six weeks, I taught them memory management (stack vs heap memory), git, Makefiles, Bison, and Flex.
-    I loved every bit of it: the long nights preparing and reviewing material, and the open office door to help students.
+	During my undergraduate degree, I met a teacher that sparked my desire to do research.
+	I tailored my undergraduate for this research and, two years later, applied to an honours with the Centre for Advanced Studies--Atlantic.
+	The CASA research group offered me a scholarship for a master's on the Eclipse OMR project.
+	Throughout my Masters, I became the maintainer of the Odin II project and co-authored five papers on the subject.
+	I became responsible for training summer, honours, masters, and Ph.D. students for Odin II.
+	During the summer of 2019, an opportunity opened up to teach, and I had three weeks to prepare.
+	I was responsible for teaching 70 students about C for their first time;
+	Within six weeks, I taught them memory management (stack vs heap memory), git, Makefiles, Bison, and Flex.
+	I loved every bit of it: the long nights preparing and reviewing material, and the open office door to help students.
 
-    I have grown significantly at the CASA group but have started to stagnate.
-    In applying to do my Ph.D. under you, I wish to increase my breadth of knowledge and get new opportunities to teach and publish.
-    I am grateful that you took the time to read this and am looking forward to hearing from you.\\
+	I have grown significantly at the CASA group but have started to stagnate.
+	In applying to do my Ph.D. under you, I wish to increase my breadth of knowledge and get new opportunities to teach and publish.
+	I am grateful that you took the time to read this and am looking forward to hearing from you.\\
 
-    \noindent Sincerely,\\
-    \indent Jean-Philippe Legault
+	\noindent Sincerely,\\
+	\indent Jean-Philippe Legault
 
 } \fi
 
 \end{document}
+

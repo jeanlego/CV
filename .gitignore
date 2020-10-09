@@ -9,3 +9,4 @@
 *.xdv
 *.fls
 *.fdb_latexmk
+*/*

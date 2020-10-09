@@ -46,8 +46,12 @@
 
 \usepackage[document]{ragged2e}
 
+% \sloppy is too much, try to force wrap sentences using microtype (play with kerning)
+\usepackage{microtype}
+\emergencystretch 3em
+
 % create refs without all the garbage
-\usepackage[backend=biber,maxcitenames=99,style=ieee,sorting=ydnt]{biblatex}
+\usepackage[backend=biber,maxnames=999,style=numeric,sorting=ydnt]{biblatex}
 \DeclareFieldFormat{labelnumberwidth}{}
 \setlength{\biblabelsep}{0pt}
 

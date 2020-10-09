@@ -1,11 +1,12 @@
-SRC=main.tex
-build_type := academicCV professionnalCV
+LIST = \
+	academicCV \
+	professionnalCV \
+	academicCV,coverLetter	
 
-all: $(build_type)
+.PHONY: $(LIST)
 
-$(build_type):
-	echo "\def\$@{}\input{$(SRC)}" > $@.tex;\
-	latexmk -gg -f -lualatex $@.tex;\
-	rm $$(echo $@.* | sed 's/$@.pdf//g')
-	# remove all but the pdf
+all: $(LIST)
 
+$(LIST):
+	@printf "\n\n\n\n ============ %s ============ \n\n\n\n\n" "$@"
+	@./build.sh "$@"	
