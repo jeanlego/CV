@@ -209,6 +209,13 @@
 	\end{longtable}
 }
 
+% Environment to hold a new list of entries
+\newenvironment{smallQuote}{
+	\begin{quoting}\footnotesize
+}{
+	\end{quoting}\normalsize
+}
+
 \newcommand{\entry}[4]{% First argument for the leftmost date(s) text, second is for the bold entry heading, third is for the bold right-aligned entry qualifier and the fourth is for the entry description
 	\parbox[t]{0.175\textwidth}{% 17.5% of the text width of the page
 		#1 % Leftmost entry date(s) text
