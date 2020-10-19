@@ -26,6 +26,9 @@
 
 \addbibresource{publications.bib}
 
+% setup footer
+\lfoot{\makebox[\textwidth][l]{\textbf{Legault, Jean-Philippe}\hfill\break {\footnotesize Generated \href{https://github.com/jeanlego/CV}{github.com/jeanlego/CV} on \today }\hfill\thepage~of~\pageref{LastPage}}}
+
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -47,7 +50,7 @@
 
 	{\huge%
 		Researcher\\[2pt]
-		Senior Developer}
+		Software Developer}
 
 	\columnbreak
 
@@ -102,7 +105,7 @@
 	During my master's in Computer Science, I have gained expertise in language runtimes and FPGA development.
 	My broad interests allow me to use lateral thinking to solve complex problems.
 	I can efficiently visualize problems, design solutions, and communicate abstract ideas, allowing me to be an effective team member.
-	My experience in academia and working as a senior developer has shaped me into an effective teacher.
+	My experience in academia, working two years as a senior, and as a lead developer, has shaped me into an effective leader.
 	Working on both commercial and open-source projects has made me adaptable to new workflows.
 
 	\vspace*{\fill}
@@ -162,6 +165,9 @@
 % reset settings
 \justifying
 
+% footnote
+
+
 \cvsect{Education}
 
 \begin{entrylist}
@@ -179,7 +185,7 @@
 
 		\textbullet{} Operating Systems (CS6605)
 		\begin{smallQuote}
-			A comprehensive study of computer operating systems: process synchronization, concurrency, multi-processor systems, virtual memory, advanced file systems, distributed systems. 
+			A comprehensive study of computer operating systems: process synchronization, concurrency, multi-processor systems, virtual memory, advanced file systems, distributed systems.
 			Design an i386 multi-tasking Kernel.
 		\end{smallQuote}
 
@@ -192,14 +198,14 @@
 		\textbullet{} Dynamic Memory Management (CS6905)
 		\begin{smallQuote}
 			Study a statically typed functional language and use it to write interpreters and demonstrating these core concepts.
-			Learn the main techniques of memory management including allocation, liveness detection, reference counting, compaction, and generational collectors.
+			Learn the main techniques of memory management, including allocation, liveness detection, reference counting, compaction, and generational collectors.
 		\end{smallQuote}
 	}
 
 	\shortentry
 	{2019}
 	{Diploma in University teaching}
-	{University of New Brunswick | NB, Canada}
+	{University of New Brunswick | NB, Canada}\\
 
 	\entry
 	{2015 -- 2017}
@@ -220,12 +226,12 @@
 
 		\textbullet{} Intro to Artificial Intelligence (CS4725)
 		\begin{smallQuote}
-			Introduction to intelligent agent design, problem solving using search techniques, the use of mathematical logic for knowledge representation and reasoning, decision making under uncertainty, machine learning techniques.
+			Introduction to intelligent agent design, problem-solving using search techniques, the use of mathematical logic for knowledge representation and reasoning, decision making under uncertainty, machine learning techniques.
 		\end{smallQuote}
 
 		\textbullet{} Digital Logic Design (ECE2214)
 		\begin{smallQuote}
-			This is an introductory course to practical aspects of digital systems design. Course includes the design of digital circuits with CAD tools and VHDL hardware description language.
+			This is an introductory course to practical aspects of digital systems design. The course includes the design of digital circuits with CAD tools and VHDL hardware description language.
 		\end{smallQuote}
 	}
 
@@ -235,45 +241,72 @@
 	{École Nationale d'Aérotechnique | QC, Canada}
 	{Completed 56 credit towards a College diploma:
 		\begin{smallQuote}
-			Conceive and fabricate aeronautical parts using Computer Aided Design (CAD) tool---Catia V5;\\
-			Plan fabrication step and assembly of airframe, engines, and other aeronautical components;\\
+			Conceive and fabricate aeronautical parts using Computer-Aided Design (CAD) tool---Catia V5;\\
+			Plan the fabrication step and assembly of the airframe, engines, and other aeronautical components;\\
 			Fabricate elements of the airframe using composite materials and sheet metal;\\
-			Collaborate to the planification of the production process, the quality assurance and testing of aerospace components;\\
-			Elaborate assembly booklets.
+			Plan of the production, quality assurance and testing process of aerospace components.
 		\end{smallQuote}
 	}
 
 \end{entrylist}
 
-\cvsect{Awards}
+\cvsect{Awards \& Grants}
 
 \begin{entrylist}
+
+	\entry
+	{2020}
+	{Research Grant}
+	{Google}
+	{30,000\$USD for one year towards a reusable Odin II Partial Mapper.}
+
 	\entry
 	{2015 -- 2016}
 	{Dean's List}
 	{University of New Brunswick | Canada}
-	{Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
+	{Awarded to students who maintained a GPA above 3.7 throughout the academic year~\cite{google}.}
+
 \end{entrylist}
 
 \cvsect{Scholarships}
 
 \begin{entrylist}
-	\entry
-	{2015 -- 2016}
-	{Sir George E. Foster}
-	{University of New Brunswick | Canada}
-	{2000\$/yr. Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
 
 	\entry
 	{2018 -- 2020}
 	{Research Fellowship}
 	{University of New Brunswick | Canada}
 	{23,500\$/yr. research fellowship  with the Centre for Advanced Studies---Atlantic on the Eclipse OMR project}
+
+	\entry
+	{2015 -- 2016}
+	{Sir George E. Foster}
+	{University of New Brunswick | Canada}
+	{2000\$/yr. Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
+
 \end{entrylist}
 
 \cvsect{Experience}
 
 \begin{entrylist}
+	\entry
+	{2019-2020}
+	{Lead Developer}
+	{Centre for Advance Studies Atlantic | Canada}{
+        Maintain the Synthesis tool of the Verilog to Routing Project, Odin II and manage the Odin II project.
+        \begin{tightemize}
+            \item Organize meetings (quarterly, weekly and daily scrum)
+            \item Take part in steering committee meetings for the project.
+            \item Architect design changes and new features for developers to implement
+            \item Mentor new developers and carve a roadmap for them.
+            \item Manage other developers and review their merge requests.
+            \item Fix Bugs and broken features.
+            \item Build new features and improve compliance with the synthesizable subset of IEEE-1364-2005 (Verilog 2005)
+            \item Improve the tool usability and documentation for both developers and users.
+            \item Improve the regression suite to catch bugs and regression in features.
+        \end{tightemize}
+	}
+
 	\entry{ Contracts\\
 	{\footnotesize SM-2019}\\
 	}
@@ -311,7 +344,7 @@
 	{2015 -- 2018}
 	{Electronic and Software Technician}
 	{Canada Electronic Parts Online Inc. | Canada}{
-		Repairing electronic devices, i.e. smart watches, televisions, computers.
+		Repairing electronic devices, i.e. smartphones, televisions, computers.
 		\begin{tightemize}
 			\item Played a significant role in increasing sales and revenue by increasing outreach.
 			\item Broadened the company expertise in electronic repairs and introduced tooling and techniques to repair devices with surface mount components.
@@ -353,7 +386,7 @@
 	{Butterfly Energy Systems}
 	{\href{http://www.butterflyenergy.ca/home.php}{http://www.butterflyenergy.ca}}{
 	Responsible to track down a null pointer exception in a multithreaded C++ codebase.
-	Traced back to a race condition because of uncaught spurious wake of the threads.
+	I traced back to a race condition because of uncaught spurious wakes of the threads.
 	}
 
 \end{entrylist}
@@ -427,12 +460,12 @@
 	Wood Working,
 	Automation,
 	Backcountry Camping,
-	Hiking,
+	Hiking
 }
+\vspace*{\baselineskip}
 
 \ifdefined\academicCV {%
 
-	\vspace*{\baselineskip}
 	\cvsect{Travel Grant}
 
 	\begin{entrylist}
@@ -492,7 +525,6 @@
 	\vspace*{\baselineskip}
 	\cvsect{Academic References}
 } \else {%
-	\clearpage
 	\cvsect{References}
 } \fi
 
@@ -502,7 +534,7 @@
 	{Dr. Kenneth B. Kent}{Thesis Supervisor}
 	{University of New Brunswick | Fredericton, New Brunswick, Canada}
 	{\texttt{ken@unb.ca | +1 506 451 6971}\\
-		Supervised me during my master's thesis, and is the code owner of the Odin II project.
+		Supervised me during my master's thesis and is the code owner of the Odin II project.
 	}
 
 	\entry%
@@ -530,7 +562,8 @@
 
 \end{entrylist}
 
-\ifdefined\coverLetter {%
+
+\ifdefined\coverLetter{%
 
 	\clearpage
 
@@ -549,14 +582,14 @@
 	I have done my undergraduate and master's at the University of New Brunswick, and I am now looking for new opportunities.
 
 	During my undergraduate degree, I met a teacher that sparked my desire to do research.
-	I tailored my undergraduate for this research and, two years later, applied to an honours with the Centre for Advanced Studies--Atlantic.
+	I tailored my undergraduate for this research and, two years later, applied to do an Honours with the Centre for Advanced Studies--Atlantic.
 	The CASA research group offered me a scholarship for a master's on the Eclipse OMR project.
 	Throughout my Masters, I became the maintainer of the Odin II project and co-authored five papers on the subject.
-	I became responsible for training summer, honours, masters, and Ph.D. students for Odin II.
+	I became responsible for training summer, masters, and Ph.D. students for Odin II.
 	During the summer of 2019, an opportunity opened up to teach, and I had three weeks to prepare.
 	I was responsible for teaching 70 students about C for their first time;
 	Within six weeks, I taught them memory management (stack vs heap memory), git, Makefiles, Bison, and Flex.
-	I loved every bit of it: the long nights preparing and reviewing material, and the open office door to help students.
+	I loved every bit of it: the long nights preparing and reviewing material and the open office door to help students.
 
 	I have grown significantly at the CASA group but have started to stagnate.
 	In applying to do my Ph.D. under you, I wish to increase my breadth of knowledge and get new opportunities to teach and publish.
@@ -565,7 +598,7 @@
 	\noindent Sincerely,\\
 	\indent Jean-Philippe Legault
 
-} \fi
+}\fi
 
 \end{document}
 

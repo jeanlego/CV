@@ -38,11 +38,15 @@
 
 \newcommand{\lorem}{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus.} % Dummy text
 
-\pagestyle{empty} % No headers or footers
-
 \usepackage{moresize} % Provides more font size commands (\HUGE and \ssmall)
 
 \usepackage[none]{hyphenat} % avoid hyphenating words
+
+\usepackage{lastpage} % to get the last page number
+\usepackage{fancyhdr} % to change header and footers
+\pagestyle{fancy} % use header and footer
+\fancyhf{} % clear header and footer
+\renewcommand{\headrulewidth}{0pt} % stop the top line
 
 \usepackage[document]{ragged2e}
 
@@ -68,13 +72,13 @@
 
 \geometry{
 	paper=letterpaper, % Paper size, change to letterpaper for US letter size
-	top=1.75cm, % Top margin
-	bottom=1.75cm, % Bottom margin
-	left=2cm, % Left margin
-	right=2cm, % Right margin
-	headheight=0.75cm, % Header height
+	top=1.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
+	left=1.5cm, % Left margin
+	right=1.5cm, % Right margin
+	headheight=0cm, % Header height
 	footskip=1cm, % Space from the bottom margin to the baseline of the footer
-	headsep=0.5cm, % Space from the top margin to the baseline of the header
+	headsep=0cm, % Space from the top margin to the baseline of the header
 }
 
 %----------------------------------------------------------------------------------------
