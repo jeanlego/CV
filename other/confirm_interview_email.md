@@ -1,4 +1,11 @@
-Hello; Salut! :)
+<!---
+time.mine
+time.theirs
+date
+business
+-->
+
+Hello, Bonjour!
 
 __English is after the big, bold line in the middle.__
 
@@ -7,7 +14,7 @@ __English is after the big, bold line in the middle.__
 > Je ne sais pas si tu prefere en anglais ou en français, alors je t'offre les deux. J'espère que je ne vais pas casser ma langue maternelle.
 Je n'ai pas passé d'interview dans les cinq dernières années, alors je dois m'excuser d'avance si j'ai l'air rouillé. J'ai surtout interviewé et j'ai oublié à quel point on est nerveux de l'autre coter.
 
-__Tout d'abord__, je voulais vérifier si l'interview de demain à 13: 00 EDT (14: 00 ADT) fonctionnait encore avec vous.
+__Tout d'abord__, je voulais vérifier si l'interview de ${time.theirs}(${time.mine}) on ${date} fonctionnait encore avec vous.
 
 __Deuxièmement__, je voulais vous donner ma liste de questions que j'ai; je ne veux pas vous prendre au dépourvu ou vous faire répondre à des choses derrière un "NDA", alors voici ma grande liste de questions:
 
@@ -21,10 +28,10 @@ __Deuxièmement__, je voulais vous donner ma liste de questions que j'ai; je ne 
 - Pression: Quel est le niveau de pression est exercée sur le développeur entre les versions et quel en est la cause.
 - Autonomie: dans quelle mesure le poste serait-il autonome? stade initial, vs plus tard.
 - Ressources d'apprentissage: dans quelle mesure le poste est-il bien documenté (tâche et outils)
-- Mentorat: Ubisoft pratique-t-il le mentorat et si oui, est-ce que le poste devrait le faire plus tard? (J'adore faire ça, d'où l'intérêt).
+- Mentorat: Est-ce que ${business} pratique le mentorat et si oui, est-ce que le poste devrait le faire plus tard? (J'adore faire ça, d'où l'intérêt).
 - Quelles sont les étapes entre maintenant et moi qui travaille pour vous?
 
-A demain
+A demain.
 
 ---
 
@@ -33,7 +40,7 @@ A demain
 > Let me start by saying I have not gone through an interview in 5 years, so I apologize ahead of time if I look rusty.
 I have mostly been interviewing, and I forgot how nervous you get on the receiving end.
 
-__First__, I wanted to check in and see if tomorrow still worked for you or if we needed to reschedule the 13:00 EDT (14:00 ADT) meeting.
+__First__, I wanted to check in and see if the ${time.theirs}(${time.mine}) on ${date} meeting was still good with you.
 
 __Second__, I wanted to give you a heads up on the question I might have, don't wanna catch you off guard or have you answer things behind NDA, so here is my big list of questions:
 
@@ -47,9 +54,9 @@ __Second__, I wanted to give you a heads up on the question I might have, don't 
 - Deadline Pressure: How much pressure between releases is put on the developer, and what is the cause.
 - Autonomy: How autonomous would the position be? early stages vs later.
 - Learning resources: How well is the position documented (task and tools)?
-- Mentorship: Does Ubisoft practice mentoring, and if so, would the position be expected to be later doing so? (I love doing this, hence the interest).
+- Mentorship: Does ${business} practice mentoring, and if so, would the position be expected to be later doing so? (I love doing this, hence the interest).
 - What are the steps between now and me working with you?
   
-Looking foward to tomorow.
+Looking foward to meeting you.
 
 cheers
