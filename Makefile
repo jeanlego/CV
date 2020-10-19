@@ -9,4 +9,5 @@ all: $(LIST)
 
 $(LIST):
 	@printf "\n\n\n\n ============ %s ============ \n\n\n\n\n" "$@"
-	@./build.sh "$@"	
+	@./setup.sh "$@"
+	latexmk -pdflua -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -output-directory="$@" -aux-directory="$@" -jobname="Jean-Philippe Legault" "$@/_main.tex"
