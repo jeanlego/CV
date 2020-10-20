@@ -262,15 +262,18 @@
 	{2020}
 	{Research Grant}
 	{Google}
-	{30,000\$USD for one year towards a reusable Odin II Partial Mapper.}
+	{30,000\$USD for one year towards a reusable Odin II Partial Mapper~\footnotemark.}
 
 	\entry
 	{2015 -- 2016}
 	{Dean's List}
 	{University of New Brunswick | Canada}
-	{Awarded to students who maintained a GPA above 3.7 throughout the academic year~\cite{google}.}
+	{Awarded to students who maintained a GPA above 3.7 throughout the academic year}
 
 \end{entrylist}
+
+% must add it again since it wont show up
+\footnotetext{\fullcite{google}}
 
 \cvsect{Scholarships}
 
@@ -566,22 +569,31 @@
 
 \end{entrylist}
 
-
 \ifdefined\coverLetter{%
 
 	\clearpage
 
+	\vspace*{20pt}
+
 	\cvsect{statement of purpose}
 
-	\large
-	\justifying
-	\parskip 0ex plus 0.2ex minus 0.1ex
-	\parindent1.5em
-	\fontsize{12}{24}\selectfont
+	\vspace{6pt}
+
+	% make the section plain formated
+	\fontsize{12}{12}\selectfont
+	\doublespacing %
+	\justifying%
+	\parskip 0ex plus 0.2ex minus 0.1ex%
+	\parindent1.5em%
+
+	\begin{quoting}
 
 	\input{\coverLetter}
 
+	\vspace{6pt}
 	\noindent Sincerely,\\\indent Jean-Philippe Legault
+
+	\end{quoting}
 
 }\fi
 

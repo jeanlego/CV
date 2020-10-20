@@ -48,6 +48,8 @@
 \fancyhf{} % clear header and footer
 \renewcommand{\headrulewidth}{0pt} % stop the top line
 
+\usepackage[bottom]{footmisc}
+
 \usepackage[document]{ragged2e}
 
 % \sloppy is too much, try to force wrap sentences using microtype (play with kerning)
