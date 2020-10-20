@@ -63,6 +63,8 @@
 
 \usepackage{setspace} % Provide doublespace and single space
 
+\usepackage{ifthen} % check if arguments is empty
+
 \usepackage[usenames,dvipsnames]{xcolor} 
 \definecolor{linecolor}{HTML}{BEBEBE} 
 
@@ -101,6 +103,13 @@
 
 %------------------------------------------------
 
+% Command to vertically centre adjacent content
+\newcommand{\vcenteredhbox}[1]{% The only parameter is for the content to centre
+	\begingroup%
+		\setbox0=\hbox{#1}\parbox{\wd0}{\box0}%
+	\endgroup%
+}
+
 \usepackage{fontawesome} % Required for FontAwesome icons
 
 % Command to output an icon in a black square box with text to the right
@@ -119,74 +128,7 @@
 \usetikzlibrary{shapes, backgrounds}
 \tikzset{x=1cm, y=1cm} % Default tikz units
 
-% Command to vertically centre adjacent content
-\newcommand{\vcenteredhbox}[1]{% The only parameter is for the content to centre
-	\begingroup%
-		\setbox0=\hbox{#1}\parbox{\wd0}{\box0}%
-	\endgroup%
-}
 
-%----------------------------------------------------------------------------------------
-%	CHARTS
-%---------------------------------------------------------------------------------------- 
-
-\newcounter{barcount}
-
-% Environment to hold a new bar chart
-\newenvironment{barchart}[1]{ % The only parameter is the maximum bar width, in cm
-	\newcommand{\barwidth}{0.35}
-	\newcommand{\barsep}{0.2}
-	
-	% Command to add a bar to the bar chart
-	\newcommand{\baritem}[2]{ % The first argument is the bar label and the second is the percentage the current bar should take up of the total width
-		\pgfmathparse{##2}
-		\let\perc\pgfmathresult
-		
-		\pgfmathparse{#1}
-		\let\barsize\pgfmathresult
-		
-		\pgfmathparse{\barsize*##2/100}
-		\let\barone\pgfmathresult
-		
-		\pgfmathparse{(\barwidth*\thebarcount)+(\barsep*\thebarcount)}
-		\let\barx\pgfmathresult
-		
-		\filldraw[fill=black, draw=none] (0,-\barx) rectangle (\barone,-\barx-\barwidth);
-		
-		\node [label=180:\colorbox{black}{\textcolor{white}{##1}}] at (0,-\barx-0.175) {};
-		\addtocounter{barcount}{1}
-	}
-	\begin{tikzpicture}
-		\setcounter{barcount}{0}
-}{
-	\end{tikzpicture}
-}
-
-%------------------------------------------------
-
-\newcounter{a}
-\newcounter{b}
-\newcounter{c}
-
-% Command to output a number of automatically-sized bubbles from a string in the format of '<size>/<label>', e.g. \bubbles{5/Eclipse, 6/git, 4/Office, 3/Inkscape, 3/Blender}
-\newcommand{\bubbles}[1]{
-	% Reset counters
-	\setcounter{a}{0}
-	\setcounter{c}{150}
-	
-	\begin{tikzpicture}[scale=3]
-		\foreach \p/\t in {#1} {
-			\addtocounter{a}{1}
-			\bubble{\thea/2}{\theb}{\p/25}{\t}{1\p0}
-		}
-	\end{tikzpicture}
-}
-
-% Command to output a bubble at a specific position with a specific size
-\newcommand{\bubble}[5]{
-	\filldraw[fill=black, draw=none] (#1,0.5) circle (#3); % Bubble
-	\node[label=\textcolor{black}{#4}] at (#1,0.7) {}; % Label
-}
 
 %----------------------------------------------------------------------------------------
 %	CUSTOM SECTIONS
@@ -198,23 +140,6 @@
 	\vspace{6pt}
 }
 
-%----------------------------------------------------------------------------------------
-%	ENTRY LIST
-%----------------------------------------------------------------------------------------
-
-\usepackage{longtable} % Required for tables that span multiple pages
-\setlength{\LTpre}{0pt} % Remove default whitespace before longtable
-\setlength{\LTpost}{0pt} % Remove default whitespace after longtable
-
-\setlength{\tabcolsep}{0pt} % No spacing between table columns
-
-% Environment to hold a new list of entries
-\newenvironment{entrylist}{
-	\begin{longtable}[H]{l l}
-}{
-	\end{longtable}
-}
-
 % Environment to hold a new list of entries
 \newenvironment{smallQuote}{
 	\begin{quoting}\footnotesize
@@ -222,34 +147,53 @@
 	\end{quoting}\normalsize
 }
 
-\newcommand{\entry}[4]{% First argument for the leftmost date(s) text, second is for the bold entry heading, third is for the bold right-aligned entry qualifier and the fourth is for the entry description
-	\parbox[t]{0.175\textwidth}{% 17.5% of the text width of the page
-		#1 % Leftmost entry date(s) text
-	}%
-	&\parbox[t]{0.825\textwidth}{% 82.5% of the text width of the page
-		\textbf{#2}% Entry heading text
-		\hfill% Horizontal whitespace
-		{\footnotesize \textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
-		#4 % Entry description text
-	}\\\\}
+\newlength\GoldenTextWidth%
+\newlength\GoldenTextMargin%
+\renewenvironment{quote}[1]{%
+	\GetTextWidth{\GoldenTextWidth}{#1}
+	\setlength{\GoldenTextMargin}{\textwidth - \GoldenTextWidth}
+	\setlength{\GoldenTextMargin}{0.5\GoldenTextMargin}
+	\list{}{%
+	  \leftmargin\GoldenTextMargin   % this is the adjusting screw
+	  \rightmargin\leftmargin
+	}
+	\item\relax
+ }
+ {\endlist}
 
-\newcommand{\shortentry}[3]{% First argument for the leftmost date(s) text, second is for the bold entry heading, third is for the bold right-aligned entry qualifier and the fourth is for the entry description
-	\parbox[t]{0.175\textwidth}{% 17.5% of the text width of the page
-		#1 % Leftmost entry date(s) text
-	}%
-	&\parbox[t]{0.825\textwidth}{% 82.5% of the text width of the page
-		\textbf{#2}% Entry heading text
-		\hfill% Horizontal whitespace
-		{\footnotesize \textbf{\textcolor{black}{#3}}}\\% Right-aligned entry qualifier text
-	}\\}
+\newcommand{\tightentry}[3]{%
+	\begin{minipage}[t]{0.175\textwidth}%
+		{#1} \hfill%
+	\end{minipage}%
+	\begin{minipage}[t]{0.825\textwidth}%
+		{%
+			\textbf{#2} \hfill {\footnotesize \textbf{\textcolor{black}{#3}}}%
+		}%
+	\end{minipage}
+	}
 
-% Command to output a separator slash between lists, e.g. '  /  '
-\newcommand{\slashsep}{\hspace{3mm}/\hspace{3mm}}
+\newcommand{\entrys}[4]{%
+	\begin{minipage}[t]{0.175\textwidth}%
+		{#1} \hfill%
+	\end{minipage}%
+	\begin{minipage}[t]{0.825\textwidth}%
+		{%
+			\textbf{#2} \hfill {\footnotesize \textbf{\textcolor{black}{#3}}} \\
+			{#4} \hfill%
+		}%
+	\end{minipage} \\
+
+	}
 
 % Bullet Lists with fewer gaps command
-\newenvironment{tightemize}{
+\newenvironment{tightemize}{%
 \vspace{-\topsep}\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt}
 {\end{itemize}\vspace{-\topsep}}
+
+
+\newcommand{\timestamp}[1]{%
+	\item[]{\footnotesize#1}%
+	}
 
 % bulleted list
 \usepackage{etoolbox}
@@ -272,18 +216,6 @@
 
 %stop indenting items
 \setlength{\itemindent}{-2em}
-
-% Custom cite command with a newline for authors and journal
-\DeclareCiteCommand{\singlecite}{
-    \begin{minipage}{\textwidth}
-    \singlespacing%
-    \usebibmacro{maintitle+title}\\
-    \hspace{-1pt}\nopunct % fix punctuation at start of authorship
-    \usebibmacro{author}\\
-    \usebibmacro{date}~|~\printlist{organization}\printlist{publisher}~|~\printlist{location}\\
-    \printfield{eventtitle}\printfield{booktitle}\usebibmacro{journal}\par\addvspace{1ex}
-    \usebibmacro{postnote}\end{minipage}%
-    }
 
 
 % comma separated citations
@@ -329,3 +261,13 @@
 
 \usepackage{quoting}
 \quotingsetup{vskip=0pt}
+
+% catch the the text width
+\newcommand*\GetTextWidth[3][\normalfont]{{#1%
+    \settowidth{#2}{abcdefghijklmnopqrstuvwxyz}%
+    \setlength{#2}{0.03193#2}%
+    \addtolength{#2}{0.44961pt}%
+    \setlength{#2}{#3#2}%
+	\global#2=#2}}
+	
+	

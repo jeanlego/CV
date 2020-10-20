@@ -13,7 +13,7 @@ jobs:
       uses: xu-cheng/texlive-action/full@v1
       with:
         run: |
-          ./build.sh
+          OUTPUT_DIR='./' ./build.sh
           echo "::set-output name=numeric_date::$(date +'%d-%m-%Y')"
           echo "::set-output name=name::$(date +'%B %d, %Y')"
           echo "::set-output name=releases::$(echo *.pdf)"

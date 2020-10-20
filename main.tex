@@ -24,6 +24,9 @@
 \usepackage{calc}
 \usepackage{hyperref}
 
+% spacing is 125% font size is 12 for readability
+\fontsize{12}{16}\selectfont%
+
 \addbibresource{publications.bib}
 
 % setup footer
@@ -171,232 +174,235 @@
 
 % footnote
 
-
 \cvsect{Education}
 
-\begin{entrylist}
-
-	\entry
-	{2018 -- cur.}
-	{Master in Computer Science}
-	{University of New Brunswick | NB, Canada}
-	{Finished courses and thesis, will defend on November 2020:
-
-		\textbullet{} FPGA CAD tool (CS6999)
+\entrys
+{2018 -- cur.}
+{Master in Computer Science}
+{University of New Brunswick | NB, Canada}
+{Finished courses and thesis, will defend on November 2020:
+	\begin{tightemize}
+		\item FPGA CAD tool (CS6999)
 		\begin{smallQuote}
 			Project-based: Redesign sequential logic synthesis to support multiple clock domain and multiple edge sensitivity in Odin II.
 		\end{smallQuote}
 
-		\textbullet{} Operating Systems (CS6605)
+		\item Operating Systems (CS6605)
 		\begin{smallQuote}
 			A comprehensive study of computer operating systems: process synchronization, concurrency, multi-processor systems, virtual memory, advanced file systems, distributed systems.
-			Design an i386 multi-tasking Kernel.
+			Design a i386 multi-tasking Kernel.
 		\end{smallQuote}
 
-		\textbullet{} Machine Learning \& Data Mining (CS6735)
+		\item Machine Learning \& Data Mining (CS6735)
 		\begin{smallQuote}
-			Cover: inductive inference of decision trees, neural network learning, statistical learning methods, generic algorithms, Bayesian methods, Information-Theoretic classification, and reinforcement learning.
-			Focus on theoretical concepts of machine learning such as inductive bias, the PAC learning framework, Occam's razor, models of noise, uniform convergence, and Fourier analysis methods.
+			Cover: inductive inference of decision trees, neural network learning, generic algorithms, Bayesian methods, Information-Theoretic classification, and reinforcement learning.
+			Focus on theoretical concepts of machine learning such as inductive bias, Occam's razor, models of noise, uniform convergence, and Fourier analysis methods.
 		\end{smallQuote}
 
-		\textbullet{} Dynamic Memory Management (CS6905)
+		\item Dynamic Memory Management (CS6905)
 		\begin{smallQuote}
 			Study a statically typed functional language and use it to write interpreters and demonstrating these core concepts.
-			Learn the main techniques of memory management, including allocation, liveness detection, reference counting, compaction, and generational collectors.
+			Learn the main techniques of memory management including allocation, liveness detection, reference counting, and generational collectors.
 		\end{smallQuote}
-	}
+	\end{tightemize}
+}
 
-	\shortentry
-	{2019}
-	{Diploma in University teaching}
-	{University of New Brunswick | NB, Canada}\\
+\entrys
+{2019}
+{Diploma in University teaching}
+{University of New Brunswick | NB, Canada}
+{}
 
-	\entry
-	{2015 -- 2017}
-	{Bachelor's in Computer Science with Honours}
-	{University of New Brunswick | NB, Canada}
-	{Honours in FPGA Architecture Design:
-
-		\textbullet{} Natural Language Processing (CS4765)
+\entrys
+{2015 -- 2017}
+{Bachelor's in Computer Science with Honours}
+{University of New Brunswick | NB, Canada}
+{Honours in FPGA Architecture Design:
+	\begin{tightemize}
+		\item Natural Language Processing (CS4765)
 		\begin{smallQuote}
 			Topics include fundamental topics in natural language processing such as n-gram language models, part-of-speech tagging, parsing, lexical semantics, spelling correction, document classification.
-			Students are expected to implement and evaluate a variety of natural language processing methods, as well as write reports describing their implementations and their performance.
+			Implement and evaluate a variety of natural language processing methods and their performance.
 		\end{smallQuote}
 
-		\textbullet{} Intro to Parallel Processing (CS4745)
+		\item Intro to Parallel Processing (CS4745)
 		\begin{smallQuote}
 			Parallel computer architectures, design and analysis of parallel algorithms, parallel programming languages, case studies, selected numerical and non-numerical applications.
 		\end{smallQuote}
 
-		\textbullet{} Intro to Artificial Intelligence (CS4725)
+		\item Intro to Artificial Intelligence (CS4725)
 		\begin{smallQuote}
-			Introduction to intelligent agent design, problem-solving using search techniques, the use of mathematical logic for knowledge representation and reasoning, decision making under uncertainty, machine learning techniques.
+			Introduction to intelligent agent design, problem-solving using search techniques, the use of mathematical logic for knowledge representation and reasoning, decision making under uncertainty.
 		\end{smallQuote}
 
-		\textbullet{} Digital Logic Design (ECE2214)
+		\item Digital Logic Design (ECE2214)
 		\begin{smallQuote}
 			This is an introductory course to practical aspects of digital systems design. The course includes the design of digital circuits with CAD tools and VHDL hardware description language.
 		\end{smallQuote}
-	}
+	\end{tightemize}
+}
 
-	\entry
-	{2012 -- 2014}
-	{Aerospace Engineering Technician}
-	{École Nationale d'Aérotechnique | QC, Canada}
-	{Completed 56 credit towards a College diploma:
-		\begin{smallQuote}
-			Conceive and fabricate aeronautical parts using Computer-Aided Design (CAD) tool---Catia V5;\\
-			Plan the fabrication step and assembly of the airframe, engines, and other aeronautical components;\\
-			Fabricate elements of the airframe using composite materials and sheet metal;\\
-			Plan of the production, quality assurance and testing process of aerospace components.
-		\end{smallQuote}
-	}
-
-\end{entrylist}
+\entrys
+{2012 -- 2014}
+{Aerospace Engineering Technician}
+{École Nationale d'Aérotechnique | QC, Canada}
+{Completed 56 credit towards a College diploma:
+	\begin{smallQuote}
+		Conceive and fabricate aeronautical parts using Computer-Aided Design (CAD) tool---Catia V5;\\
+		Plan the fabrication step and assembly of the airframe, engines, and other aeronautical components;\\
+		Fabricate elements of the airframe using composite materials and sheet metal;\\
+		Plan of the production, quality assurance and testing process of aerospace components.
+	\end{smallQuote}
+}
 
 \cvsect{Awards \& Grants}
 
-\begin{entrylist}
+\entrys
+{2020}
+{Research Grant}
+{Google}
+{30,000\$USD for one year towards a reusable Odin II Partial Mapper.\footnotemark}
 
-	\entry
-	{2020}
-	{Research Grant}
-	{Google}
-	{30,000\$USD for one year towards a reusable Odin II Partial Mapper~\footnotemark.}
-
-	\entry
-	{2015 -- 2016}
-	{Dean's List}
-	{University of New Brunswick | Canada}
-	{Awarded to students who maintained a GPA above 3.7 throughout the academic year}
-
-\end{entrylist}
-
-% must add it again since it wont show up
 \footnotetext{\fullcite{google}}
+
+\entrys
+{2015 -- 2016}
+{Dean's List}
+{University of New Brunswick | Canada}
+{Awarded to students who maintained a GPA above 3.7 throughout the academic year}
 
 \cvsect{Scholarships}
 
-\begin{entrylist}
+\entrys
+{2018 -- 2020}
+{Research Fellowship}
+{University of New Brunswick | Canada}
+{23,500\$/yr. research fellowship  with the Centre for Advanced Studies---Atlantic on the Eclipse OMR project}
 
-	\entry
-	{2018 -- 2020}
-	{Research Fellowship}
-	{University of New Brunswick | Canada}
-	{23,500\$/yr. research fellowship  with the Centre for Advanced Studies---Atlantic on the Eclipse OMR project}
-
-	\entry
-	{2015 -- 2016}
-	{Sir George E. Foster}
-	{University of New Brunswick | Canada}
-	{2000\$/yr. Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
-
-\end{entrylist}
+\entrys
+{2015 -- 2016}
+{Sir George E. Foster}
+{University of New Brunswick | Canada}
+{2000\$/yr. Awarded to students who maintained a GPA above 3.7 throughout the academic year.}
 
 \cvsect{Experience}
 
-\begin{entrylist}
-	\entry
-	{2019-2020}
-	{Lead Developer}
-	{Centre for Advance Studies Atlantic | Canada}{
-        Maintain the Synthesis tool of the Verilog to Routing Project, Odin II and manage the Odin II project.
-        \begin{tightemize}
-            \item Organize meetings (quarterly, weekly and daily scrum)
-            \item Take part in steering committee meetings for the project.
-            \item Architect design changes and new features for developers to implement
-            \item Mentor new developers and carve a roadmap for them.
-            \item Manage other developers and review their merge requests.
-            \item Fix Bugs and broken features.
-            \item Build new features and improve compliance with the synthesizable subset of IEEE-1364-2005 (Verilog 2005)
-            \item Improve the tool usability and documentation for both developers and users.
-            \item Improve the regression suite to catch bugs and regression in features.
-        \end{tightemize}
-	}
+\entrys
+{2019-2020}
+{Lead Developer}
+{Centre for Advance Studies Atlantic | Canada}{
+	Maintain the Synthesis tool of the Verilog to Routing Project, Odin II and manage the Odin II project.
+	\begin{tightemize}
+		\item Organize meetings (quarterly, weekly and daily scrum)
+		\item Take part in steering committee meetings for the project.
+		\item Architect design changes and new features for developers to implement
+		\item Mentor new developers and carve a roadmap for them.
+		\item Manage other developers and review their merge requests.
+		\item Fix Bugs and broken features.
+		\item Build new features and improve compliance with the synthesizable subset of IEEE-1364-2005 (Verilog 2005)
+		\item Improve the tool usability and documentation for both developers and users.
+		\item Improve the regression suite to catch bugs and regression in features.
+	\end{tightemize}
+}
 
-	\entry{ Contracts\\
-	{\footnotesize SM-2019}\\
-	}
-	{Instructor}
-	{University of New Brunswick | Canada}{
-	\textbullet{} CS2263---Systems Software Development
-	\begin{quoting}
-		Procedural program development and supporting tools, using the C language.
-		Topics include implementation of data structures, memory management, compilation/linking, building, debugging, and version control.
-	\end{quoting}
-	}
+\entrys
+{
+	Contracts\\
+	\begin{tightemize}
+		\item[] {\footnotesize SM-2019}
+	\end{tightemize}
+}
+{Instructor}
+{University of New Brunswick | Canada}
+{
+	\begin{tightemize}
+		\item CS2263---Systems Software Development
+		\begin{smallQuote}
+			Procedural program development and supporting tools, using the C language.
+			Topics include implementation of data structures, memory management, compilation/linking, building, debugging, and version control.
+		\end{smallQuote}
+	\end{tightemize}
 
-	\entry{ Contracts\\
-	{\footnotesize WI-2018}\\
-	{\footnotesize SM-2018}\\
-	{\footnotesize FA-2018}\\
-	}
-	{Teaching Assistant}
-	{University of New Brunswick | Canada}
-	{
-	\textbullet{} Computability and Formal Languages\\
-	\textbullet{} Professional Practices\\
-	\textbullet{} Professional Practices\\
-	}
+}
 
-	\entry{ Contracts\\
-	{\footnotesize FA-2018}\\
-	}
-	{Tutor}
-	{University of New Brunswick | Canada}{
-	\textbullet{} Operating Systems I (CS3413) Rachelle Potter
-	}
+\entrys
+{
+	Contracts\\
+	\begin{tightemize}
+		\timestamp{WI-2018}
+		\timestamp{SM-2018}
+		\timestamp{FA-2018}
+	\end{tightemize}
+}
+{Teaching Assistant}
+{University of New Brunswick | Canada}
+{
+	\begin{tightemize}
+		\item Computability and Formal Languages
+		\item Professional Practices
+		\item Professional Practices
+	\end{tightemize}
+}
 
-	\entry
-	{2015 -- 2018}
-	{Electronic and Software Technician}
-	{Canada Electronic Parts Online Inc. | Canada}{
-		Repairing electronic devices, i.e. smartphones, televisions, computers.
-		\begin{tightemize}
-			\item Played a significant role in increasing sales and revenue by increasing outreach.
-			\item Broadened the company expertise in electronic repairs and introduced tooling and techniques to repair devices with surface mount components.
-			\item Increased repairs success rate and revenue.
-			\item Introduced software-based repairs and debugging (i.e. reflashing lost IMEI or CMOS)
-			\item Introduced corrupted or defective hard drive data recovery.
-		\end{tightemize}
-	}
+\entrys
+{
+	Contracts\\
+	\begin{tightemize}
+		\item[] {\footnotesize FA-2018}
+	\end{tightemize}
+}
+{Tutor}
+{University of New Brunswick | Canada}
+{
+	\begin{tightemize}
+		\item Operating Systems I (CS3413) Rachelle Potter
+	\end{tightemize}
+}
 
-\end{entrylist}
+\entrys
+{2015 -- 2018}
+{Electronic and Software Technician}
+{Canada Electronic Parts Online Inc. | Canada}{
+	Repairing electronic devices, i.e. smartphones, televisions, computers.
+	\begin{tightemize}
+		\item Played a significant role in increasing sales and revenue by increasing outreach.
+		\item Broadened the company expertise in electronic repairs and introduced tooling and techniques to repair devices with surface mount components.
+		\item Increased repairs success rate and revenue.
+		\item Introduced software-based repairs and debugging (i.e. reflashing lost IMEI or CMOS)
+		\item Introduced corrupted or defective hard drive data recovery.
+	\end{tightemize}
+}
 
 \cvsect{Project Contributions}
 
-\begin{entrylist}
+\entrys
+{2018 -- cur.}
+{Eclipse OMR}
+{\href{https://github.com/eclipse/omr}{github://eclipse/omr}}{
+	Responsible for initiating the work on the basic implementation of an ARM64V8 specific OMR; This involved making the full suite of hardware operation in the ARM64V8 documentation (or AArch64) available to the JIT compiler.
+	Weekly meetings were held on infrastructure design and implementation.
+	The project was lead by the IBM Runtimes Team in Ottawa, and work was done conjointly with members of the IBM Japan team.
+}
 
-	\entry
-	{2018 -- cur.}
-	{Eclipse OMR}
-	{\href{https://github.com/eclipse/omr}{github://eclipse/omr}}{
-		Responsible for initiating the work on the basic implementation of an ARM64V8 specific OMR; This involved making the full suite of hardware operation in the ARM64V8 documentation (or AArch64) available to the JIT compiler.
-		Weekly meetings were held on infrastructure design and implementation.
-		The project was lead by the IBM Runtimes Team in Ottawa, and work was done conjointly with members of the IBM Japan team.
-	}
+\entrys
+{2017 -- cur.}
+{Odin II}
+{\href{https://github.com/verilog-to-routing/vtr-verilog-to-routing/graphs/contributors}{github://verilog-to-routing}}{
+	Maintain the Front-End Verilog Synthesis tool of the Verilog to Routing Project.
+	\begin{tightemize}
+		\item Managing other developers and review their merge requests.
+		\item Fix Bugs and broken features.
+		\item Build new features and improve the tool usability and documentation for both developers and users.
+	\end{tightemize}
+}
 
-	\entry
-	{2017 -- cur.}
-	{Odin II}
-	{\href{https://github.com/verilog-to-routing/vtr-verilog-to-routing/graphs/contributors}{github://verilog-to-routing}}{
-		Maintain the Front-End Verilog Synthesis tool of the Verilog to Routing Project.
-		\begin{tightemize}
-			\item Managing other developers and review their merge requests.
-			\item Fix Bugs and broken features.
-			\item Build new features and improve the tool usability and documentation for both developers and users.
-		\end{tightemize}
-	}
-
-	\entry
-	{2019 \\{\footnotesize Feature contract}}
-	{Butterfly Energy Systems}
-	{\href{http://www.butterflyenergy.ca/home.php}{http://www.butterflyenergy.ca}}{
-	Responsible to track down a null pointer exception in a multithreaded C++ codebase.
-	I traced back to a race condition because of uncaught spurious wakes of the threads.
-	}
-
-\end{entrylist}
+\entrys
+{2019 \\{\footnotesize Feature contract}}
+{Butterfly Energy Systems}
+{\href{http://www.butterflyenergy.ca/home.php}{http://www.butterflyenergy.ca}}{
+Responsible to track down a null pointer exception in a multithreaded C++ codebase.
+I traced back to a race condition because of uncaught spurious wakes of the threads.
+}
 
 \cvsect{Data Interchange Formats}
 
@@ -475,33 +481,25 @@
 
 	\cvsect{Travel Grant}
 
-	\begin{entrylist}
-
-		\shortentry{2020}{International Symposium on FPGA}{Monterey, California, United-States}
-		\shortentry{2019}{Cascon}{Markham, Ontario, Canada}
-		\shortentry{2018}{Cascon}{Markham, Ontario, Canada}
-		\shortentry{2018}{Castle}{Markham, Ontario, Canada}
-		\shortentry{2018}{Splash}{Boston, Massachusetts, Canada}
-		\shortentry{2018}{CMC Microsystem TEXPO}{Toronto, Ontario, Canada}
-
-	\end{entrylist}
+	\tightentry{2020}{International Symposium on FPGA}{Monterey, California, United-States}
+	\tightentry{2019}{Cascon}{Markham, Ontario, Canada}
+	\tightentry{2018}{Cascon}{Markham, Ontario, Canada}
+	\tightentry{2018}{Castle}{Markham, Ontario, Canada}
+	\tightentry{2018}{Splash}{Boston, Massachusetts, Canada}
+	\tightentry{2018}{CMC Microsystem TEXPO}{Toronto, Ontario, Canada}
 
 	\vspace*{\baselineskip}
 	\cvsect{Mentoring {\footnotesize(Unofficial Supervision)}}
 
-	\begin{entrylist}
-
-		\shortentry{2020 -- cur.}{Daniel Stokes}{Honours, B.CS., University of Waikato, New Zealand}
-		\shortentry{2020 -- cur.}{Eve MacDonald}{Work Term, B.EE, University of New Brunswick, Canada}
-		\shortentry{2020}{Shrey Vyas}{Work Term, M.CS, University of New Brunswick, Canada}
-		\shortentry{2019 -- 2020}{Mohammad Sohrabi}{Ph.D. CS, University of New Brunswick, Canada}
-		\shortentry{2019 -- cur.}{Seyed Alireza Damghani}{M.  CS, University of New Brunswick, Canada}
-		\shortentry{2019}{Michael Flawn}{Honours, B.CS., University of New Brunswick, Canada}
-		\shortentry{2019}{Alexandrea Demmings}{Work Term, B.SwE, University of New Brunswick, Canada}
-		\shortentry{2019}{Julie Brown}{Work Term, B.CEE, University of New Brunswick, Canada}
-		\shortentry{2018}{Nasrin Eshraghi Ivari}{Ph.D. CS University of New Brunswick, Canada}
-
-	\end{entrylist}
+	\tightentry{2020 -- cur.}{Daniel Stokes}{Honours, B.CS., University of Waikato, New Zealand}
+	\tightentry{2020 -- cur.}{Eve MacDonald}{Work Term, B.EE, University of New Brunswick, Canada}
+	\tightentry{2020}{Shrey Vyas}{Work Term, M.CS, University of New Brunswick, Canada}
+	\tightentry{2019 -- 2020}{Mohammad Sohrabi}{Ph.D. CS, University of New Brunswick, Canada}
+	\tightentry{2019 -- cur.}{Seyed Alireza Damghani}{M.  CS, University of New Brunswick, Canada}
+	\tightentry{2019}{Michael Flawn}{Honours, B.CS., University of New Brunswick, Canada}
+	\tightentry{2019}{Alexandrea Demmings}{Work Term, B.SwE, University of New Brunswick, Canada}
+	\tightentry{2019}{Julie Brown}{Work Term, B.CEE, University of New Brunswick, Canada}
+	\tightentry{2018}{Nasrin Eshraghi Ivari}{Ph.D. CS University of New Brunswick, Canada}
 
 } \fi
 
@@ -535,65 +533,60 @@
 	\cvsect{References}
 } \fi
 
-\begin{entrylist}
+\entrys%
+{Dr. Kenneth B. Kent}{Thesis Supervisor}
+{University of New Brunswick | Fredericton, New Brunswick, Canada}
+{\texttt{ken@unb.ca | +1 506 451 6971}
 
-	\entry%
-	{Dr. Kenneth B. Kent}{Thesis Supervisor}
-	{University of New Brunswick | Fredericton, New Brunswick, Canada}
-	{\texttt{ken@unb.ca | +1 506 451 6971}\\
-		Supervised me during my master's thesis and is the code owner of the Odin II project.
-	}
+	Supervised me during my master's thesis and is the code owner of the Odin II project.
+}
 
-	\entry%
-	{Dr. Paul Cook}{Assistant Dean}
-	{University of New Brunswick | Fredericton, New Brunswick, Canada}
-	{\texttt{paul.cook@unb.ca | +1 506 447 3466}\\
-		Responsible for undergraduate affairs, he was my superior during my work as an instructor.
-	}
+\entrys%
+{Dr. Paul Cook}{Assistant Dean}
+{University of New Brunswick | Fredericton, New Brunswick, Canada}
+{\texttt{paul.cook@unb.ca | +1 506 447 3466}
 
-	\entry%
-	{Dr. Panos Patros}{Mentor and External Collaborator}
-	{University of Waikato, Waikato, New Zealand}
-	{\texttt{panos.patros@waikato.ac.nz | +64 7 838 4651 EXT:4651}\\
-		Working under the CASA group, he taught me "Introduction to Java."
-		He later mentored me during my honours thesis, which spun off a joint paper with him.
-		I am currently mentoring one of his students in New Zealand.
-	}
+	Responsible for undergraduate affairs, he was my superior during my work as an instructor.
+}
 
-	\entry%
-	{Aaron G. Graham}{Research Assistant}
-	{University of New Brunswick, Fredericton, New Brunswick, Canada}
-	{\texttt{aaron.graham@unb.ca | +1 506 453 3567}\\
-		Responsible for managing day to day operations across projects in CASA, he is my superior on the Eclipse OMR project.
-	}
+\entrys%
+{Dr. Panos Patros}{Mentor and External Collaborator}
+{University of Waikato, Waikato, New Zealand}
+{\texttt{panos.patros@waikato.ac.nz | +64 7 838 4651 EXT:4651}
 
-\end{entrylist}
+	Working under the CASA group, he taught me "Introduction to Java."
+	He later mentored me during my honours thesis, which spun off a joint paper with him.
+	I am currently mentoring one of his students in New Zealand.
+}
+
+\entrys%
+{Aaron G. Graham}{Research Assistant}
+{University of New Brunswick, Fredericton, New Brunswick, Canada}
+{\texttt{aaron.graham@unb.ca | +1 506 453 3567}
+
+	Responsible for managing day to day operations across projects in CASA, he is my superior on the Eclipse OMR project.
+}
 
 \ifdefined\coverLetter{%
 
 	\clearpage
 
-	\vspace*{20pt}
+	\cvsect{Statement of Purpose}
 
-	\cvsect{statement of purpose}
-
-	\vspace{6pt}
-
-	% make the section plain formated
-	\fontsize{12}{12}\selectfont
-	\doublespacing %
+	\rmfamily
+	\large
+	% we should be double spaced
+	\doublespacing%
+	% justified for cleanliness
 	\justifying%
+	% reset the indent and paragraph skip
 	\parskip 0ex plus 0.2ex minus 0.1ex%
 	\parindent1.5em%
-
-	\begin{quoting}
-
-	\input{\coverLetter}
-
-	\vspace{6pt}
-	\noindent Sincerely,\\\indent Jean-Philippe Legault
-
-	\end{quoting}
+	\begin{quote}{80}
+		\input{\coverLetter} \hfill \\[6pt]
+		\noindent Sincerely,\\
+		\indent Jean-Philippe Legault
+	\end{quote}
 
 }\fi
 
