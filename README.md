@@ -6,7 +6,9 @@ If you landed here for any other reason than wanting to fork this project and ma
 - [email](mailto:jeanphilippe.legault@unb.ca)
 - [linkedIn](https://www.linkedin.com/in/jean-philippe-legault-1489ab173)
 - [GitHub](https://github.com/jeanlego)
-  
+- [Donate <img src="https://static.thenounproject.com/png/28659-200.png" width="50" height="50">](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=BKKWLMRSDLXEL&currency_code=CAD)
+
+
 ## Usage
 
 This repo contains a rolling release of my CV.
