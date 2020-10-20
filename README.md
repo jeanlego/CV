@@ -3,7 +3,7 @@
 If you landed here, you probably are looking for the releases of my CV, you can find the newest version in the [Release Section](https://github.com/jeanlego/CV/releases).
 If you landed here for any other reason than wanting to fork this project and make it you own and you want to reach out to me specifically
 
-- [email](jeanphilippe.legault@unb.ca)
+- [email](mailto:jeanphilippe.legault@unb.ca)
 - [linkedIn](https://www.linkedin.com/in/jean-philippe-legault-1489ab173)
 - [GitHub](https://github.com/jeanlego)
   
