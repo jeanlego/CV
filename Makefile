@@ -1,2 +1,2 @@
 all: main.tex
-	./build.sh
+	OUTPUT_DIR=./build ./build.sh

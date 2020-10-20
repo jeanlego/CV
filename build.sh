@@ -60,14 +60,23 @@ do
     
     echo "
 #!/bin/bash
+
+rm ${OUTPUT_DIR}/$NAME.pdf
 export TEXINPUTS=.:${PWD}:${COVER_LETTER_LOCATION}:$TEXINPUTS
 export BIBINPUTS=${PWD}
+
+set -xe
+
 pushd ./build/$NAME/
 latexmk ${LATEXMK_ARGS[*]} $NAME.tex
 popd
-mv ./build/$NAME/$NAME.pdf ./
+mv ./build/$NAME/$NAME.pdf ${OUTPUT_DIR}
+
 " > "./build/$NAME/build.sh"
 
 done
+
+# cleanup
+rm ./*.pdf
 
 echo ./build/*/build.sh | xargs -n1 | xargs -P "$(nproc --all)" -n1 -I {} /bin/bash {}

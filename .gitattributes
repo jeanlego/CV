@@ -1,0 +1,22 @@
+*.tex export-ignore
+*.bib export-ignore
+*.bbl export-ignore
+*.aux export-ignore
+*.bcf export-ignore
+*.blg export-ignore
+*.fdb_latexmk export-ignore
+*.fls export-ignore
+*.log export-ignore
+*.out export-ignore
+*.xml export-ignore
+*.md export-ignore
+*.sh export-ignore
+*.cls export-ignore
+*.yml export-ignore
+*.conf export-ignore
+*/.*
+./.* export-ignore
+Makefile export-ignore
+./coverletters/* export-ignore
+./tools/* export-ignore
+./other/* export-ignore
