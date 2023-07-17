@@ -17,15 +17,6 @@ jobs:
           echo "::set-output name=numeric_date::$(date +'%d-%m-%Y')"
           echo "::set-output name=name::$(date +'%B %d, %Y')"
           echo "::set-output name=releases::$(echo *.pdf)"
-    - name: Delete old release assets
-      if: steps.compile.conclusion == 'success' # only if we built something
-      continue-on-error: true # dont let failures stop you
-      uses: dev-drprasad/delete-tag-and-release@v0.1.2
-      with:
-        delete_release: true # default: false
-        tag_name: ${{steps.compile.outputs.numeric_date}}
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Upload CV Release
       uses: meeDamian/github-release@2.0
       if: steps.compile.conclusion == 'success' # only if we built something
