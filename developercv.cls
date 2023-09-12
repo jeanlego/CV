@@ -76,10 +76,10 @@
 
 \geometry{
 	paper=letterpaper, % Paper size, change to letterpaper for US letter size
-	top=1.5cm, % Top margin
-	bottom=2.5cm, % Bottom margin
-	left=1.5cm, % Left margin
-	right=1.5cm, % Right margin
+	top=1.25cm, % Top margin
+	bottom=2.25cm, % Bottom margin
+	left=1.25cm, % Left margin
+	right=1.25cm, % Right margin
 	headheight=0cm, % Header height
 	footskip=1cm, % Space from the bottom margin to the baseline of the footer
 	headsep=0cm, % Space from the top margin to the baseline of the header
@@ -162,21 +162,21 @@
  {\endlist}
 
 \newcommand{\tightentry}[3]{%
-	\begin{minipage}[t]{0.175\textwidth}%
-		{#1} \hfill%
+	\begin{minipage}[t]{0.195\textwidth}%
+		{\footnotesize#1} \hfill%
 	\end{minipage}%
-	\begin{minipage}[t]{0.825\textwidth}%
+	\begin{minipage}[t]{0.805\textwidth}%
 		{%
 			\textbf{#2} \hfill {\footnotesize \textbf{\textcolor{black}{#3}}}%
 		}%
-	\end{minipage}
+	\end{minipage}%
 	}
 
 \newcommand{\entrys}[4]{%
-	\begin{minipage}[t]{0.175\textwidth}%
-		{#1} \hfill%
+	\begin{minipage}[t]{0.195\textwidth}%
+		{\footnotesize#1} \hfill%
 	\end{minipage}%
-	\begin{minipage}[t]{0.825\textwidth}%
+	\begin{minipage}[t]{0.805\textwidth}%
 		{%
 			\textbf{#2} \hfill {\footnotesize \textbf{\textcolor{black}{#3}}} \\
 			{#4} \hfill%
