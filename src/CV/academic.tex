@@ -1,0 +1,67 @@
+\input{src/documentClass}
+
+\begin{document}
+
+\newcommand{\toptext}{%
+During my master's in Computer Science, I have gained expertise in language runtimes and FPGA development.
+My broad interests allow me to use lateral thinking to solve complex problems.
+I can efficiently visualize problems, design solutions, and communicate abstract ideas, allowing me to be an effective team member.
+My experience in academia, working two years as a senior, and as a lead developer, has shaped me into an effective leader.
+Working on both commercial and open-source projects has made me adaptable to new workflows.
+}
+
+\input{src/header}
+
+\input{src/education}
+
+\cvsect{Travel Grant}
+
+\tightentry{2020}{International Symposium on FPGA}{Monterey, California, United-States}
+\tightentry{2019}{Cascon}{Markham, Ontario, Canada}
+\tightentry{2018}{Cascon}{Markham, Ontario, Canada}
+\tightentry{2018}{Castle}{Markham, Ontario, Canada}
+\tightentry{2018}{Splash}{Boston, Massachusetts, Canada}
+\tightentry{2018}{CMC Microsystem TEXPO}{Toronto, Ontario, Canada}
+
+\vspace*{\baselineskip}
+\cvsect{Mentoring {\footnotesize(Unofficial Supervision)}}
+
+\tightentry{2020 -- cur.}{Daniel Stokes}{Honours, B.CS., University of Waikato, New Zealand}
+\tightentry{2020 -- cur.}{Eve MacDonald}{Work Term, B.EE, University of New Brunswick, Canada}
+\tightentry{2020}{Shrey Vyas}{Work Term, M.CS, University of New Brunswick, Canada}
+\tightentry{2019 -- 2020}{Mohammad Sohrabi}{Ph.D. CS, University of New Brunswick, Canada}
+\tightentry{2019 -- cur.}{Seyed Alireza Damghani}{M.  CS, University of New Brunswick, Canada}
+\tightentry{2019}{Michael Flawn}{Honours, B.CS., University of New Brunswick, Canada}
+\tightentry{2019}{Alexandrea Demmings}{Work Term, B.SwE, University of New Brunswick, Canada}
+\tightentry{2019}{Julie Brown}{Work Term, B.CEE, University of New Brunswick, Canada}
+\tightentry{2018}{Nasrin Eshraghi Ivari}{Ph.D. CS University of New Brunswick, Canada}
+
+
+\nocite{*}
+\blfootnote{Presentors are \underline{underlined}}
+
+\defbibheading{pip}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{In Proceeding Papers}\vspace*{-6pt}}
+\printbibliography[heading=pip, keyword=inprogresspapers]
+
+\defbibheading{pubp}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Published Papers}\vspace*{-6pt}}
+\printbibliography[heading=pubp, keyword=publishedpapers]
+
+\defbibheading{diss}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Dissertations}\vspace*{-6pt}}
+\printbibliography[heading=diss, keyword=dissertations]
+
+\defbibheading{talks}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Talks}\vspace*{-6pt}}
+\printbibliography[heading=talks, keyword=talks]
+
+\defbibheading{poster}{\vspace*{-6pt}\vspace*{\baselineskip}\cvsect{Conference Posters}\vspace*{-6pt}}
+\printbibliography[heading=poster, keyword=poster]
+
+\vspace*{-6pt}
+\vspace*{\baselineskip}
+
+\input{src/experience}
+
+\input{src/knowledge}
+
+\input{src/references}
+
+\end{document}

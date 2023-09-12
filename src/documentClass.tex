@@ -1,0 +1,16 @@
+\documentclass{developercv} % Default font size, values from 8-12pt are recommended
+\usepackage{multicol} % header is two column
+\usepackage{calc}
+\usepackage{hyperref}
+
+% spacing is 125% font size is 12 for readability
+\fontsize{12}{16}\selectfont%
+
+\addbibresource{publications.bib}
+
+% setup footer
+\lfoot{%
+	\makebox[0.20\textwidth][l]{\textbf{Legault, Jean-Philippe}}% left side
+	\makebox[0.60\textwidth][c]{\footnotesize Generated \href{https://github.com/jeanlego/CV/releases}{github.com/jeanlego/CV} on \today}% center
+	\makebox[0.20\textwidth][r]{\thepage~of~\pageref{LastPage}}% right side
+	}
