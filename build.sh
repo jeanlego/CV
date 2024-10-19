@@ -1,12 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
 
 source ./setup.conf
 
-ALLOWED_TYPES=(
-    $(basename src/CV/*.tex .tex)
-)
-
-
+ALLOWED_TYPES=()
+for f in src/CV/*.tex; do
+    ALLOWED_TYPES+=( "$(basename "$f" .tex)" )
+done
 
 declare -a BUILD_MATRIX
 for _types in "${BUILD_TYPES[@]}";
@@ -30,11 +31,11 @@ echo ")"
 
 sleep 2
 
-rm -R ./build
+rm -Rf ./build || true
 declare -a PARALEL_MATRIX
 for _types in "${BUILD_MATRIX[@]}";
 do
-    IFS=',' read -r -a ARGS < <(echo ${_types})
+    IFS=',' read -r -a ARGS < <(echo "${_types}")
     TYPE="${ARGS[0]}CV"
     COVER_LETTER="${ARGS[1]}"
 
@@ -56,7 +57,7 @@ do
     { 
         echo "\def\\$TYPE{}"
         [ "_${COVER_LETTER}" != "_" ] && [ -f "${COVER_LETTER}" ]  && echo "\def\\coverLetter{$COVER_LETTER}"
-        echo "\input{src/CV/$_types}"
+        echo "\input{src/CV/${ARGS[0]}}"
     } > "./build/$NAME/$NAME.tex"
     
     echo "
@@ -78,6 +79,6 @@ mv ./build/$NAME/$NAME.pdf ${OUTPUT_DIR}
 done
 
 # cleanup
-rm ./*.pdf
+rm ./*.pdf || true
 
-echo ./build/*/build.sh | xargs -n1 | xargs -P "$(nproc --all)" -n1 -I {} /bin/bash {}
+echo ./build/*/build.sh | xargs -n1 | xargs -P "$(nproc --all)" -I {} /bin/bash {}
