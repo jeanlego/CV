@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-
 source ./setup.conf
 
 ALLOWED_TYPES=()
