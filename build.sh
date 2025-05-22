@@ -33,10 +33,8 @@ rm -Rf ./build || true
 declare -a PARALEL_MATRIX
 for _types in "${BUILD_MATRIX[@]}";
 do
-    IFS=',' read -r -a ARGS < <(echo "${_types}")
-    TYPE="${ARGS[0]}CV"
-    COVER_LETTER="${ARGS[1]}"
-
+    TYPE="${_types%%,*}CV"
+    COVER_LETTER="${_types##*,}"
     # rebrand into something unique and readable
     COVER_LETTER_ID=$(basename "${COVER_LETTER}" .tex)
     COVER_LETTER_LOCATION=$(readlink -f "$(dirname "${COVER_LETTER}")")
@@ -59,22 +57,17 @@ do
     } > "./build/$NAME/$NAME.tex"
     
     echo "
-#!/bin/bash
+#!/usr/bin/env bash
 
 export TEXINPUTS=.:${PWD}:${COVER_LETTER_LOCATION}:$TEXINPUTS
 export BIBINPUTS=${PWD}
 
-set -xe
-
 cd ./build/$NAME/
-latexmk ${LATEXMK_ARGS[*]} $NAME.tex
-cp -f $NAME.pdf ${PWD}/
-
+exec latexmk ${LATEXMK_ARGS[*]} $NAME.tex
 " > "./build/$NAME/build.sh"
 
 done
 
-# cleanup
-rm ./*.pdf || true
-
 echo ./build/*/build.sh | xargs -n1 | xargs -P "$(nproc --all)" -I {} /bin/bash {}
+rm ./*.pdf || true
+cp ./build/*/*.pdf ./
