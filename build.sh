@@ -53,7 +53,7 @@ do
     { 
         echo "\def\\$TYPE{}"
         [ "_${COVER_LETTER}" != "_" ] && [ -f "${COVER_LETTER}" ]  && echo "\def\\coverLetter{$COVER_LETTER}"
-        echo "\input{src/CV/${ARGS[0]}}"
+        echo "\input{src/CV/${_types%%,*}}"
     } > "./build/$NAME/$NAME.tex"
     
     echo "
