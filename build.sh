@@ -42,7 +42,7 @@ do
     COVER_LETTER_LOCATION=$(readlink -f "$(dirname "${COVER_LETTER}")")
     if [ "_${COVER_LETTER}" != "_" ] && [ -f "${COVER_LETTER}" ]
     then
-        NAME="${TYPE},${COVER_LETTER_ID}"
+        NAME="${TYPE}-${COVER_LETTER_ID}"
     else
         NAME="${TYPE}"
     fi
