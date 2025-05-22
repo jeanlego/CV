@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 source ./setup.conf
-
+PWD="$(pwd)"
 ALLOWED_TYPES=()
 for f in src/CV/*.tex; do
     ALLOWED_TYPES+=( "$(basename "$f" .tex)" )
@@ -63,13 +63,12 @@ do
 
 export TEXINPUTS=.:${PWD}:${COVER_LETTER_LOCATION}:$TEXINPUTS
 export BIBINPUTS=${PWD}
-OUTPUT_DIR="$(readlink -f "${OUTPUT_DIR:-$PWD}")"
 
 set -xe
 
 cd ./build/$NAME/
 latexmk ${LATEXMK_ARGS[*]} $NAME.tex
-cp -f $NAME.pdf ${OUTPUT_DIR}/
+cp -f $NAME.pdf ${PWD}/
 
 " > "./build/$NAME/build.sh"
 
