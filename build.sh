@@ -61,16 +61,15 @@ do
     echo "
 #!/bin/bash
 
-rm ${OUTPUT_DIR}/$NAME.pdf
 export TEXINPUTS=.:${PWD}:${COVER_LETTER_LOCATION}:$TEXINPUTS
 export BIBINPUTS=${PWD}
+OUTPUT_DIR="$(readlink -f "${OUTPUT_DIR:-$PWD}")"
 
 set -xe
 
-pushd ./build/$NAME/
+cd ./build/$NAME/
 latexmk ${LATEXMK_ARGS[*]} $NAME.tex
-popd
-mv ./build/$NAME/$NAME.pdf ${OUTPUT_DIR}
+cp -f $NAME.pdf ${OUTPUT_DIR}/
 
 " > "./build/$NAME/build.sh"
 
