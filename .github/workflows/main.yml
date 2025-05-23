@@ -13,7 +13,7 @@ jobs:
       uses: xu-cheng/texlive-action@v2
       with:
         scheme: full
-        run: ./build.sh; echo "files=$(find -name "*.pdf")" >> $GITHUB_OUTPUT
+        run: ./build.sh; echo "files='$(find -name "*.pdf")'" >> $GITHUB_OUTPUT
     - name: Upload Built Ruby
       env:
         GH_TOKEN: ${{ github.token }}
