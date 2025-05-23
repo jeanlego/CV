@@ -69,6 +69,7 @@ exec latexmk ${LATEXMK_ARGS[*]} $NAME.tex
 done
 
 echo ./build/*/build.sh | xargs -n1 | xargs -P "$(nproc --all)" -I {} /bin/bash {}
-rm ./*.pdf || true
-find -name "*.pdf"
-cp ./build/*/*.pdf ./
+rm ./*.pdf &>/dev/null || true
+find ./build/ -name "*.pdf" -exec cp -f {} ./ \;
+
+echo *.pdf
