@@ -18,4 +18,4 @@ jobs:
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
-      run: gh release upload "$(date +'%d-%m-%Y')" ${{steps.compile.outputs.files}}
+      run: gh release upload --clobber "$(date +'%d-%m-%Y')" ${{steps.compile.outputs.files}}
