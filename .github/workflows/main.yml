@@ -10,12 +10,15 @@ jobs:
       uses: actions/checkout@v4
     - name: Build Release
       id: compile
-      uses: xu-cheng/texlive-action@v2
-      with:
-        scheme: full
-        run: ./build.sh
-    - name: Upload pdf
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
-      run: gh release upload --clobber "$(date +'%d-%m-%Y')" *.pdf
+      uses: xu-cheng/texlive-action@v2
+      with:
+        scheme: full
+        run: |
+          apk add github-cli
+          ./build.sh
+          export GH_TOKEN=${{ github.token }}
+          export GH_REPO=${{ github.repository }}
+          gh release upload --clobber "$(date +'%d-%m-%Y')" *.pdf
