@@ -21,4 +21,6 @@ jobs:
           ./build.sh
           export GH_TOKEN=${{ github.token }}
           export GH_REPO=${{ github.repository }}
-          gh release upload --clobber "$(date +'%d-%m-%Y')" *.pdf
+          RELEASE_TAG="$(date +'%d-%m-%Y')"
+          gh release create "$RELEASE_TAG" --title "$RELEASE_TAG"
+          gh release upload --clobber "$RELEASE_TAG" *.pdf
