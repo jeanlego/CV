@@ -14,10 +14,10 @@ jobs:
       with:
         scheme: full
         run: |
-          OUTPUT_DIR='./' ./build.sh
-          echo "::set-output name=numeric_date::$(date +'%d-%m-%Y')"
-          echo "::set-output name=name::$(date +'%B %d, %Y')"
-          echo "::set-output name=releases::$(echo *.pdf)"
+          ./build.sh
+          echo "tag=$(date +'%d-%m-%Y')" >> $GITHUB_OUTPUT
+          echo "name=$(date +'%B %d, %Y')" >> $GITHUB_OUTPUT
+          echo "files=$(echo *.pdf)" >> $GITHUB_OUTPUT
     - name: Upload CV Release
       uses: meeDamian/github-release@2.0
       if: steps.compile.conclusion == 'success' # only if we built something
@@ -27,7 +27,7 @@ jobs:
         draft: false
         prerelease: false
         token: ${{ secrets.GITHUB_TOKEN }}
-        tag: ${{steps.compile.outputs.numeric_date}}
-        name: ${{steps.compile.outputs.full_date}}
+        tag: ${{steps.compile.outputs.tag}}
+        name: ${{steps.compile.outputs.name}}
         files: >
-          ${{steps.compile.outputs.releases}}
+          ${{steps.compile.outputs.files}}
