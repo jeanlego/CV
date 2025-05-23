@@ -70,4 +70,5 @@ done
 
 echo ./build/*/build.sh | xargs -n1 | xargs -P "$(nproc --all)" -I {} /bin/bash {}
 rm ./*.pdf || true
+find -name "*.pdf"
 cp ./build/*/*.pdf ./
