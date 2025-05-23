@@ -13,9 +13,14 @@ jobs:
       uses: xu-cheng/texlive-action@v2
       with:
         scheme: full
-        run: ./build.sh
-    - name: Upload Built Ruby
+        run: |
+           ./build.sh
+            echo "files=$(echo *.pdf)" >> $GITHUB_OUTPUT
+
+    - name: Upload pdf
       env:
         GH_TOKEN: ${{ github.token }}
         GH_REPO: ${{ github.repository }}
-      run: gh release upload --clobber "$(date +'%d-%m-%Y')" ${{ steps.compile.outputs.files }}
+      run: |
+        echo "${{ steps.compile.outputs.files }}"
+        gh release upload --clobber "$(date +'%d-%m-%Y')" ${{ steps.compile.outputs.files }}
