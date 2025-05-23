@@ -22,5 +22,5 @@ jobs:
           export GH_TOKEN=${{ github.token }}
           export GH_REPO=${{ github.repository }}
           RELEASE_TAG="$(date +'%d-%m-%Y')"
-          gh release create "$RELEASE_TAG" --title "$RELEASE_TAG"
+          gh release create "$RELEASE_TAG" --title "$RELEASE_TAG" || true
           gh release upload --clobber "$RELEASE_TAG" *.pdf
