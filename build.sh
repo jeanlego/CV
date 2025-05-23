@@ -72,4 +72,4 @@ echo ./build/*/build.sh | xargs -n1 | xargs -P "$(nproc --all)" -I {} /bin/bash 
 rm ./*.pdf &>/dev/null || true
 find ./build/ -name "*.pdf" -exec cp -f {} ./ \;
 
-echo *.pdf
+echo "files=$(echo *.pdf)" >> $GITHUB_OUTPUT
